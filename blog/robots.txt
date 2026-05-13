@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dainty-youtiao-a0570b.netlify.app/sitemap.xml

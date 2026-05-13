@@ -1,0 +1,19 @@
+.snapshots/
+.gemini/
+.DS_Store
+Thumbs.db
+*.log
+
+# Gros fichiers vidéo (>100MB, limite GitHub)
+PHOTOS mobilisation/
+journal tv/
+cagnotte leetchi/
+reglementation/
+reponse direction/
+soutien syndical/
+tract/
+Sans titre.jpg
+1200x680.jpg
+*.mp4
+*.mov
+*.avi
