@@ -393,44 +393,29 @@
         // Support Form Logic (Moderation & Email via FormSubmit)
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('support-form');
-            const successMsg = document.getElementById('form-success-msg');
-            const formInfo = document.getElementById('form-info');
             
             // L'email est divisé pour éviter d'être repéré facilement par les robots (spambots)
             const emailPart1 = "bezialaurent";
             const emailPart2 = "gmail.com";
             
+            // On ajoute dynamiquement l'URL de redirection après envoi
+            const nextInput = document.createElement('input');
+            nextInput.type = 'hidden';
+            nextInput.name = '_next';
+            nextInput.value = window.location.href;
+            form.appendChild(nextInput);
+            
             form.addEventListener('submit', function(e) {
-                e.preventDefault();
+                // Pour que l'activation de l'email fonctionne chez FormSubmit, 
+                // il faut une soumission de formulaire classique (pas d'AJAX).
+                // On construit l'action dynamiquement juste avant l'envoi pour cacher l'email.
+                form.action = `https://formsubmit.co/${emailPart1}@${emailPart2}`;
+                form.method = "POST";
                 
                 const btn = form.querySelector('.btn-submit');
-                const originalText = btn.textContent;
-                btn.textContent = "Envoi en cours...";
-                btn.disabled = true;
-
-                const formData = new FormData(form);
+                btn.textContent = "Redirection...";
                 
-                // Envoi silencieux par AJAX (sans recharger la page)
-                fetch(`https://formsubmit.co/ajax/${emailPart1}@${emailPart2}`, {
-                    method: "POST",
-                    headers: { 
-                        'Accept': 'application/json'
-                    },
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Masquer le formulaire et afficher le message de succès
-                    form.querySelectorAll('.form-group, .btn-submit, h3').forEach(el => el.style.display = 'none');
-                    formInfo.style.display = 'none';
-                    successMsg.style.display = 'block';
-                })
-                .catch(error => {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    alert("Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.");
-                    console.error("FormSubmit Error:", error);
-                });
+                // Le navigateur va envoyer le formulaire et rediriger l'utilisateur.
             });
         });
     </script>
