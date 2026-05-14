@@ -438,6 +438,126 @@ footer h2 {
     color: var(--primary);
 }
 
+/* Text Modal (Qui Sommes Nous) */
+.text-modal-content {
+    background-color: var(--light);
+    margin: 5% auto;
+    padding: 3rem;
+    width: 90%;
+    max-width: 850px;
+    border-radius: 12px;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.close-about {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--secondary);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-about:hover {
+    color: var(--primary);
+}
+
+.about-text {
+    color: var(--text);
+}
+
+.about-text h2 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    border-bottom: 4px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.about-text > p:nth-of-type(1) {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.about-text h3 {
+    color: var(--secondary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.about-text h4 {
+    color: var(--primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.about-text ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.about-text li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.about-text strong {
+    color: var(--secondary);
+}
+
+@media (max-width: 600px) {
+    .text-modal-content {
+        padding: 2rem 1.5rem;
+        margin: 10% auto;
+    }
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    .close-about {
+        top: 10px;
+        right: 15px;
+    }
+}
+
+.clickable-title {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.clickable-title:hover {
+    transform: scale(1.02);
+}
+
+.click-hint {
+    font-size: 1rem;
+    color: var(--primary);
+    vertical-align: middle;
+    opacity: 0.8;
+    margin-left: 10px;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.clickable-title:hover .click-hint {
+    opacity: 1;
+}
+
 /* Videos */
 .video-grid {
     display: grid;
