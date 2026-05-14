@@ -390,32 +390,47 @@
             }
         }
 
-        // Support Form Logic (Moderation & Email via FormSubmit)
+        // Support Form Logic (Moderation & Email via FormSubmit AJAX)
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('support-form');
+            const successMsg = document.getElementById('form-success-msg');
+            const formInfo = document.getElementById('form-info');
             
-            // L'email est divisé pour éviter d'être repéré facilement par les robots (spambots)
-            const emailPart1 = "bezialaurent";
-            const emailPart2 = "gmail.com";
-            
-            // On ajoute dynamiquement l'URL de redirection après envoi
-            const nextInput = document.createElement('input');
-            nextInput.type = 'hidden';
-            nextInput.name = '_next';
-            nextInput.value = window.location.href;
-            form.appendChild(nextInput);
+            // Chaîne aléatoire sécurisée fournie par FormSubmit (L'email n'est plus dans le code)
+            const formSubmitId = "83cd6db4216ccf2134d8df55102ef194";
             
             form.addEventListener('submit', function(e) {
-                // Pour que l'activation de l'email fonctionne chez FormSubmit, 
-                // il faut une soumission de formulaire classique (pas d'AJAX).
-                // On construit l'action dynamiquement juste avant l'envoi pour cacher l'email.
-                form.action = `https://formsubmit.co/${emailPart1}@${emailPart2}`;
-                form.method = "POST";
+                e.preventDefault(); // On bloque la redirection pour un envoi 100% transparent
                 
                 const btn = form.querySelector('.btn-submit');
-                btn.textContent = "Redirection...";
+                const originalText = btn.textContent;
+                btn.textContent = "Envoi en cours...";
+                btn.disabled = true;
+
+                const formData = new FormData(form);
                 
-                // Le navigateur va envoyer le formulaire et rediriger l'utilisateur.
+                // Envoi silencieux via AJAX
+                fetch(`https://formsubmit.co/ajax/${formSubmitId}`, {
+                    method: "POST",
+                    headers: { 
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Cacher le formulaire et afficher le message de confirmation sur la page
+                    form.querySelectorAll('.form-group, .btn-submit, h3, #form-info, input').forEach(el => {
+                        if(el.style) el.style.display = 'none';
+                    });
+                    successMsg.style.display = 'block';
+                })
+                .catch(error => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    alert("Une erreur s'est produite lors de l'envoi. Veuillez réessayer.");
+                    console.error("FormSubmit Error:", error);
+                });
             });
         });
     </script>
