@@ -95,7 +95,7 @@
                         <span class="press-source">La Dépêche</span>
                         <p class="press-title">En grève, les ambulanciers du CHU de Toulouse ralentissent les sorties des véhicules</p>
                         <p class="press-excerpt">"On transporte des êtres vivants, pas des colis" : les ambulanciers du CHU de Toulouse ont entamé une grève illimitée. Ils dénoncent un manque de reconnaissance et réclament l'octroi de la NBI.</p>
-                        <a href="media/En grève, les ambulanciers du CHU de Toulouse ralentissent les sorties des véhicules de leur service pour réclamer des primes - ladepeche.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
+                        <a href="media/article_ladepeche.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
                     </div>
                 </div>
                 <div class="press-card">
@@ -103,7 +103,7 @@
                         <span class="press-source">Actu.fr</span>
                         <p class="press-title">Un "glissement de tâches" dénoncé par les salariés en lutte</p>
                         <p class="press-excerpt">Les ambulanciers confirment qu'ils exécutent des tâches parfois complexes, annexes à la fiche de poste initiale. Transporter des corps à la chambre mortuaire, ils l'ont toujours fait mais réclament un cadre légal.</p>
-                        <a href="media/_On transporte des êtres vivants, pas des colis_ _ les ambulanciers du CHU de Toulouse en grève, la direction réplique.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
+                        <a href="media/article_actu.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
                     </div>
                 </div>
                 <div class="press-card">
@@ -111,7 +111,7 @@
                         <span class="press-source">Le Toulousain</span>
                         <p class="press-title">Grève illimitée entamée par les ambulanciers en lutte</p>
                         <p class="press-excerpt">Le mouvement a débuté ce lundi 11 mai. Les agents réclament une revalorisation de leurs missions et l'équité avec les autres CHU de France qui perçoivent déjà les primes demandées.</p>
-                        <a href="media/Le Toulousain.pdf" target="_blank" class="btn-read">Lire le dossier</a>
+                        <a href="media/article_toulousain.pdf" target="_blank" class="btn-read">Lire le dossier</a>
                     </div>
                 </div>
                 <div class="press-card">
@@ -119,7 +119,7 @@
                         <span class="press-source">La Dépêche</span>
                         <p class="press-title">Des activités particulières et complexes qu’il faut revaloriser</p>
                         <p class="press-excerpt">Sud alerte sur la rémunération des contractuels et le décalage entre les missions réelles sur le terrain et la reconnaissance administrative actuelle.</p>
-                        <a href="media/_Des activités particulières et complexes qu’il faut revaloriser_ _ les ambulanciers du CHU de Toulouse se lancent dans une grève illimitée - ladepeche.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
+                        <a href="media/article_ladepeche2.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
                     </div>
                 </div>
                 <div class="press-card">
@@ -127,7 +127,7 @@
                         <span class="press-source">France 3 Régions</span>
                         <p class="press-title">Les ambulanciers du CHU réclament la NBI et une revalorisation de leurs missions</p>
                         <p class="press-excerpt">Dossier complet sur les revendications des ambulanciers en lutte. Pourquoi le mouvement s'inscrit dans une démarche nationale de reconnaissance des métiers de l'urgence.</p>
-                        <a href="media/CHU de Toulouse _ grève illimitée entamée par les ambulanciers en lutte pour leurs revendications.pdf" target="_blank" class="btn-read">Consulter le dossier</a>
+                        <a href="media/article_france3.pdf" target="_blank" class="btn-read">Consulter le dossier</a>
                     </div>
                 </div>
             </div>
@@ -210,7 +210,33 @@
 
         <section id="temoignages">
             <h2 class="section-title">Vos témoignages de soutien</h2>
-            <div class="testimonials-grid">
+            
+            <div class="leave-message-container">
+                <form id="support-form" class="support-form">
+                    <h3>Laissez un message de soutien</h3>
+                    <p id="form-info" style="margin-bottom: 1.5rem; color: #555; font-size: 0.95rem;">Votre message sera envoyé pour modération. Il apparaîtra publiquement sur le blog après validation.</p>
+                    
+                    <div class="form-group">
+                        <input type="text" id="support-name" name="Nom" placeholder="Votre Nom / Prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="support-message" name="Message" placeholder="Écrivez votre message de soutien ici..." rows="4" required></textarea>
+                    </div>
+                    
+                    <!-- Configuration FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nouveau message de soutien sur le blog Ambulanciers CHU !">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <button type="submit" class="btn-submit">Envoyer mon message</button>
+                    
+                    <div id="form-success-msg" style="display: none; text-align: center; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 1.5rem; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
+                        Merci ! Votre message a bien été enregistré. Il apparaîtra sur la page après vérification par notre équipe.
+                    </div>
+                </form>
+            </div>
+
+            <div class="testimonials-grid" id="testimonials-grid">
                 <div class="testimonial-card">
                     <p class="testimonial-content">Nous vivons un moment de l’histoire où certains dirigeants pensent qu’on peut s’assoir sur le droit… Vous leur montrez que non et nous vous y aidons…</p>
                     <span class="testimonial-name">Annie ROUET</span>
@@ -272,6 +298,42 @@
                 <a href="photos/tract1.jpg" download class="btn-cagnotte" style="font-size: 0.9rem; padding: 0.8rem 1.5rem;">Télécharger le tract (JPG)</a>
             </div>
         </section>
+
+        <section id="partage" class="social-share-section">
+            <h2 class="section-title">Partagez notre combat</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Plus nous serons visibles, plus nous serons entendus. Aidez-nous en partageant le blog :</p>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://dainty-youtiao-a0570b.netlify.app/" target="_blank" class="share-btn facebook-btn">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V7.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
+                        <path d="M16.671 15.543l.531-3.47h-3.328V9.824c0-.949.464-1.874 1.956-1.874h1.514V5.011s-1.374-.235-2.686-.235c-2.74 0-4.533 1.662-4.533 4.67v2.628H7.078v3.47h3.047v8.385a12.09 12.09 0 003.75 0v-8.385h2.796z" fill="#FFF"/>
+                    </svg>
+                    Facebook
+                </a>
+                <a href="https://api.whatsapp.com/send?text=Soutenez%20les%20ambulanciers%20du%20CHU%20de%20Toulouse%20en%20gr%C3%A8ve%20!%20%0Ahttps://dainty-youtiao-a0570b.netlify.app/" target="_blank" class="share-btn whatsapp-btn">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#25D366" d="M11.975 0C5.353 0 0 5.354 0 11.975c0 2.651.862 5.105 2.333 7.106L.516 24l5.143-1.636c1.922 1.258 4.195 1.986 6.316 1.986 6.621 0 11.974-5.353 11.974-11.975S18.597 0 11.975 0z"/>
+                        <path fill="#FFF" d="M17.77 14.496c-.318-.16-1.884-.93-2.176-1.036-.291-.106-.503-.16-.715.16-.212.318-.821 1.036-1.006 1.248-.186.212-.371.238-.689.079-2.311-1.157-3.914-2.827-4.832-4.37-.186-.318.186-.291.503-.927.106-.212.053-.398-.026-.557-.079-.16-.715-1.722-.979-2.358-.26-.615-.521-.531-.715-.541-.186-.011-.398-.011-.61-.011-.212 0-.557.079-.848.398-.291.318-1.113 1.087-1.113 2.65 0 1.564 1.14 3.075 1.299 3.287.16.212 2.242 3.42 5.432 4.797 2.056.887 2.868.969 3.927.81 1.229-.185 2.821-1.152 3.218-2.265.398-1.113.398-2.067.278-2.265-.119-.204-.435-.323-.753-.483z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="share-btn instagram-btn">
+                    <svg viewBox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="ig-grad" r="1.5" cx="0.2" cy="0.8">
+                                <stop offset="0" stop-color="#f09433"/>
+                                <stop offset="0.3" stop-color="#e6683c"/>
+                                <stop offset="0.6" stop-color="#dc2743"/>
+                                <stop offset="0.8" stop-color="#cc2366"/>
+                                <stop offset="1" stop-color="#bc1888"/>
+                            </radialGradient>
+                        </defs>
+                        <path fill="url(#ig-grad)" d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.203 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                    Instagram
+                </a>
+            </div>
+        </section>
     </main>
 
     <div id="imageModal" class="modal">
@@ -327,6 +389,50 @@
                 modal.style.display = "none";
             }
         }
+
+        // Support Form Logic (Moderation & Email via FormSubmit)
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('support-form');
+            const successMsg = document.getElementById('form-success-msg');
+            const formInfo = document.getElementById('form-info');
+            
+            // L'email est divisé pour éviter d'être repéré facilement par les robots (spambots)
+            const emailPart1 = "bezialaurent";
+            const emailPart2 = "gmail.com";
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const btn = form.querySelector('.btn-submit');
+                const originalText = btn.textContent;
+                btn.textContent = "Envoi en cours...";
+                btn.disabled = true;
+
+                const formData = new FormData(form);
+                
+                // Envoi silencieux par AJAX (sans recharger la page)
+                fetch(`https://formsubmit.co/ajax/${emailPart1}@${emailPart2}`, {
+                    method: "POST",
+                    headers: { 
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Masquer le formulaire et afficher le message de succès
+                    form.querySelectorAll('.form-group, .btn-submit, h3').forEach(el => el.style.display = 'none');
+                    formInfo.style.display = 'none';
+                    successMsg.style.display = 'block';
+                })
+                .catch(error => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    alert("Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.");
+                    console.error("FormSubmit Error:", error);
+                });
+            });
+        });
     </script>
 </body>
 </html>
