@@ -41,12 +41,14 @@
 
     <nav>
         <a href="#revendications">Revendications</a>
+        <a href="#communiques">Communiqués</a>
         <a href="#press">Presse</a>
         <a href="#videos">Vidéos TV</a>
         <a href="#mobilisation">Mobilisation</a>
         <a href="#temoignages">Soutiens</a>
         <a href="#cagnotte">Dons</a>
         <a href="#documents">Tracts</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <main class="container">
@@ -87,6 +89,28 @@
             </div>
             <div class="cagnotte-image">
                 <img src="photos/cagnotte.png" alt="Cagnotte Leetchi">
+            </div>
+        </section>
+
+        <section id="communiques">
+            <h2 class="section-title">Communiqués de Presse</h2>
+            <div class="press-grid">
+                <div class="press-card">
+                    <div class="press-content">
+                        <span class="press-source">SUD & CGT</span>
+                        <p class="press-title">Communiqué du 11 Mai 2026</p>
+                        <p class="press-excerpt">Appel à la grève illimitée, présentation du mouvement et détail de nos revendications (NBI, IFR, fiche de poste).</p>
+                        <a href="media/communique_11_mai.pdf" target="_blank" class="btn-read">Lire le communiqué</a>
+                    </div>
+                </div>
+                <div class="press-card">
+                    <div class="press-content">
+                        <span class="press-source">SUD & CGT</span>
+                        <p class="press-title">Communiqué du 14 Mai 2026</p>
+                        <p class="press-excerpt">Bilan des premières journées de mobilisation, poursuite du mouvement et état de la situation avec la direction.</p>
+                        <a href="media/communique_14_mai.pdf" target="_blank" class="btn-read">Lire le communiqué</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -342,6 +366,36 @@
                 </a>
             </div>
         </section>
+
+        <section id="contact">
+            <h2 class="section-title">Nous Contacter</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Une question ? Une proposition d'interview ou un message de soutien privé ? N'hésitez pas à nous écrire.</p>
+            
+            <div class="leave-message-container">
+                <form id="contact-form" class="support-form">
+                    <div class="form-group">
+                        <input type="text" id="contact-name" name="Nom" placeholder="Votre Nom / Prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contact-email" name="Email" placeholder="Votre Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contact-message" name="Message" placeholder="Écrivez votre message ici..." rows="5" required></textarea>
+                    </div>
+                    
+                    <!-- Configuration FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nouveau message de contact privé - Blog Ambulanciers CHU !">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <button type="submit" class="btn-submit">Envoyer le message</button>
+                    
+                    <div id="contact-success-msg" style="display: none; text-align: center; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 1.5rem; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
+                        Merci ! Votre message a bien été envoyé. Nous reviendrons vers vous dans les plus brefs délais.
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <div id="imageModal" class="modal">
@@ -532,6 +586,49 @@
                     console.error("FormSubmit Error:", error);
                 });
             });
+
+            // Contact Form Logic (Masquage de l'email)
+            const contactForm = document.getElementById('contact-form');
+            const contactSuccessMsg = document.getElementById('contact-success-msg');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const btn = contactForm.querySelector('.btn-submit');
+                    const originalText = btn.textContent;
+                    btn.textContent = "Envoi en cours...";
+                    btn.disabled = true;
+
+                    const formData = new FormData(contactForm);
+                    
+                    // L'email est recomposé en Javascript pour qu'il ne soit pas lisible directement dans le code source HTML par les robots.
+                    const user = "bezialaurent";
+                    const domain = "gmail.com";
+                    
+                    // Envoi silencieux via AJAX
+                    fetch(`https://formsubmit.co/ajax/${user}@${domain}`, {
+                        method: "POST",
+                        headers: { 
+                            'Accept': 'application/json'
+                        },
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        contactForm.querySelectorAll('.form-group, .btn-submit').forEach(el => {
+                            if(el.style) el.style.display = 'none';
+                        });
+                        contactSuccessMsg.style.display = 'block';
+                    })
+                    .catch(error => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                        alert("Une erreur s'est produite lors de l'envoi. Veuillez réessayer.");
+                        console.error("FormSubmit Error:", error);
+                    });
+                });
+            }
         });
     </script>
 </body>
