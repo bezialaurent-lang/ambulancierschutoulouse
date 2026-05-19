@@ -791,6 +791,10 @@ footer h2 {
     transform: scale(1.05);
 }
 
+.fse-logo {
+    max-width: 100px !important;
+}
+
 .union-card span {
     font-weight: 700;
     color: var(--secondary) !important;
