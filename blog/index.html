@@ -46,6 +46,7 @@
         <a href="#reportages">Reportages</a>
         <a href="#videos">Vidéos</a>
         <a href="#mobilisation">Mobilisation</a>
+        <a href="#musique">Musique</a>
         <a href="#temoignages">Soutiens</a>
         <a href="#cagnotte">Dons</a>
         <a href="#documents">Tracts</a>
@@ -391,6 +392,74 @@
                 </div>
                 <p class="carousel-legend">Lancement historique de la grève illimitée.</p>
             </div>
+        </section>
+
+        <section id="musique">
+            <h2 class="section-title">La Playlist de la Grève</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Écoutez les musiques de soutien à notre mouvement :</p>
+            
+            <div class="audio-player-container" style="max-width: 600px; margin: 0 auto 4rem auto; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 1.5rem;">
+                    <audio id="main-audio-player" controls style="width: 100%; outline: none; border-radius: 30px; background-color: #f1f3f4;">
+                        <source src="audio/ambulancier dans la rue.mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'élément audio.
+                    </audio>
+                </div>
+                
+                <ul class="playlist-list" style="list-style: none; padding: 0; margin: 0;">
+                    <li class="playlist-item active" data-src="audio/ambulancier dans la rue.mp3" style="padding: 12px 15px; cursor: pointer; border-bottom: 1px solid #eee; display: flex; align-items: center; background-color: #f0f8ff; font-weight: bold; border-radius: 6px; transition: background-color 0.2s;">
+                        <span style="margin-right: 12px; font-size: 1.2rem;">🎵</span> <span style="flex-grow: 1;">Ambulancier dans la rue</span>
+                    </li>
+                    <li class="playlist-item" data-src="audio/Le_dû_du_lendemain.mp3" style="padding: 12px 15px; cursor: pointer; border-bottom: 1px solid #eee; display: flex; align-items: center; border-radius: 6px; transition: background-color 0.2s;">
+                        <span style="margin-right: 12px; font-size: 1.2rem;">🎵</span> <span style="flex-grow: 1;">Le dû du lendemain</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const audioPlayer = document.getElementById('main-audio-player');
+                    const playlistItems = document.querySelectorAll('.playlist-item');
+                    
+                    playlistItems.forEach(item => {
+                        item.addEventListener('click', function() {
+                            playlistItems.forEach(el => {
+                                el.classList.remove('active');
+                                el.style.backgroundColor = 'transparent';
+                                el.style.fontWeight = 'normal';
+                            });
+                            
+                            this.classList.add('active');
+                            this.style.backgroundColor = '#f0f8ff';
+                            this.style.fontWeight = 'bold';
+                            
+                            audioPlayer.src = this.getAttribute('data-src');
+                            audioPlayer.play();
+                        });
+                        
+                        item.addEventListener('mouseenter', function() {
+                            if (!this.classList.contains('active')) {
+                                this.style.backgroundColor = '#f9f9f9';
+                            }
+                        });
+                        
+                        item.addEventListener('mouseleave', function() {
+                            if (!this.classList.contains('active')) {
+                                this.style.backgroundColor = 'transparent';
+                            }
+                        });
+                    });
+                    
+                    audioPlayer.addEventListener('ended', function() {
+                        const activeItem = document.querySelector('.playlist-item.active');
+                        let nextItem = activeItem.nextElementSibling;
+                        if (!nextItem) {
+                            nextItem = playlistItems[0];
+                        }
+                        nextItem.click();
+                    });
+                });
+            </script>
         </section>
 
         <section id="temoignages">
