@@ -933,3 +933,15 @@ footer h2 {
     color: #bc1888;
     border: 2px solid #bc1888;
 }
+
+.share-btn.tiktok-btn {
+    background: white;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.share-btn.x-btn {
+    background: white;
+    color: #000000;
+    border: 2px solid #000000;
+}
