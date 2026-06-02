@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grève des Ambulanciers CHU Toulouse | Soutien, NBI et Actualités</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Découvrez le combat et les actions des ambulanciers du CHU de Toulouse en grève illimitée. Soutenez nos revendications (NBI, fiche de poste, transports complexes) pour la reconnaissance de notre métier.">
-    <meta name="keywords" content="grève ambulanciers CHU Toulouse, NBI ambulanciers, SAMU 31 grève, SMUR Toulouse, revendications ambulanciers, hôpital Purpan grève, hôpital Rangueil, syndicat ambulanciers, manifestation toulouse, actualités santé">
+    <meta name="description"
+        content="Découvrez le combat et les actions des ambulanciers du CHU de Toulouse en grève illimitée. Soutenez nos revendications (NBI, fiche de poste, transports complexes) pour la reconnaissance de notre métier.">
+    <meta name="keywords"
+        content="grève ambulanciers CHU Toulouse, NBI ambulanciers, SAMU 31 grève, SMUR Toulouse, revendications ambulanciers, hôpital Purpan grève, hôpital Rangueil, syndicat ambulanciers, manifestation toulouse, actualités santé">
     <meta name="author" content="Ambulanciers CHU Toulouse en lutte">
     <link rel="canonical" href="https://dainty-youtiao-a0570b.netlify.app/">
-    
+
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dainty-youtiao-a0570b.netlify.app/">
     <meta property="og:title" content="AMBULANCIERS DU CHU TOULOUSE EN GRÈVE : Stop à l'Injustice">
-    <meta property="og:description" content="Nous ne sommes pas des transporteurs, nous sommes des soignants. Soutenez notre combat pour la reconnaissance.">
+    <meta property="og:description"
+        content="Nous ne sommes pas des transporteurs, nous sommes des soignants. Soutenez notre combat pour la reconnaissance.">
     <meta property="og:image" content="photos/banner.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Grève des Ambulanciers - CHU de Toulouse">
-    <meta property="twitter:description" content="Suivez nos actions et soutenez la caisse de grève pour la reconnaissance de notre métier.">
+    <meta property="twitter:description"
+        content="Suivez nos actions et soutenez la caisse de grève pour la reconnaissance de notre métier.">
     <meta property="twitter:image" content="photos/banner.jpg">
 
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNLELWM83J"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-HNLELWM83J');
+        gtag('config', 'G-HNLELWM83J');
     </script>
 </head>
+
 <body>
 
     <header>
@@ -47,25 +53,27 @@
         <h1>AMBULANCIERS DU CHU TOULOUSE EN LUTTE</h1>
         <p class="strike-date">Mouvement débuté le 11 Mai 2026</p>
         <div class="live-badge" style="margin-bottom: 1rem;">
-            <span class="dot"></span> MOUVEMENT EN COURS - JOUR 22
+            <span class="dot"></span> MOUVEMENT EN COURS - <span id="strike-day">JOUR 22</span>
         </div>
-        
-        <div style="display: flex; justify-content: center; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 30px; width: fit-content; margin-left: auto; margin-right: auto; backdrop-filter: blur(5px);">
+
+        <div
+            style="display: flex; justify-content: center; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 30px; width: fit-content; margin-left: auto; margin-right: auto; backdrop-filter: blur(5px);">
             <span style="color: white; font-size: 0.9rem; font-weight: bold;">🎵 Playlist :</span>
             <audio id="header-audio" controls style="height: 30px; outline: none; border-radius: 15px;">
                 <source src="audio/ambulancier dans la rue.mp3" type="audio/mpeg">
             </audio>
-            <select id="header-audio-select" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.4); border-radius: 15px; padding: 3px 10px; outline: none; cursor: pointer; font-size: 0.85rem;">
+            <select id="header-audio-select"
+                style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.4); border-radius: 15px; padding: 3px 10px; outline: none; cursor: pointer; font-size: 0.85rem;">
                 <option value="audio/ambulancier dans la rue.mp3" style="color: black;">Ambulancier dans la rue</option>
                 <option value="audio/Le_dû_du_lendemain.mp3" style="color: black;">Le dû du lendemain</option>
             </select>
             <script>
-                document.getElementById('header-audio-select').addEventListener('change', function() {
+                document.getElementById('header-audio-select').addEventListener('change', function () {
                     var player = document.getElementById('header-audio');
                     player.src = this.value;
                     player.play();
                 });
-                document.getElementById('header-audio').addEventListener('ended', function() {
+                document.getElementById('header-audio').addEventListener('ended', function () {
                     var select = document.getElementById('header-audio-select');
                     select.selectedIndex = (select.selectedIndex + 1) % select.options.length;
                     this.src = select.value;
@@ -89,31 +97,41 @@
     </nav>
 
     <main class="container">
-        
+
         <section id="revendications">
             <div style="margin-bottom: 2rem;">
-                <h2 class="section-title clickable-title" id="btn-qui-sommes-nous" title="Cliquez pour lire">Qui Sommes Nous ? <span class="click-hint">[Cliquez pour lire]</span></h2>
+                <h2 class="section-title clickable-title" id="btn-qui-sommes-nous" title="Cliquez pour lire">Qui Sommes
+                    Nous ? <span class="click-hint">[Cliquez pour lire]</span></h2>
             </div>
             <h2 class="section-title">Pourquoi nous sommes en grève ?</h2>
             <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #555;">
-                Face au mépris de la direction et à l'absence de reconnaissance de nos fonctions réelles, les ambulanciers du CHU de Toulouse se mobilisent. Nous ne sommes pas de simples transporteurs, nous sommes des acteurs de soins à part entière.
+                Face au mépris de la direction et à l'absence de reconnaissance de nos fonctions réelles, les
+                ambulanciers du CHU de Toulouse se mobilisent. Nous ne sommes pas de simples transporteurs, nous sommes
+                des acteurs de soins à part entière.
             </p>
             <div class="demands-grid">
                 <div class="demand-card">
                     <h3>Octroi de la NBI & IFR</h3>
-                    <p>Attribution de la Nouvelle Bonification Indiciaire et de l'Indemnité Forfaitaire de Risque pour l'ensemble des agents, conformément à la décision du Conseil d'État n°467063.</p>
+                    <p>Attribution de la Nouvelle Bonification Indiciaire et de l'Indemnité Forfaitaire de Risque pour
+                        l'ensemble des agents, conformément à la décision du Conseil d'État n°467063.</p>
                 </div>
                 <div class="demand-card">
                     <h3>Fiche de Poste</h3>
-                    <p>Réactualisation immédiate de la fiche de poste pour qu'elle soit conforme à nos missions réelles (UHSI, SAMU, Médecine nucléaire, Pédiatrie, Psychiatrie). <br><br><a href="media/Ambulancier_A0055.pdf" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">Consulter la fiche de poste actuelle (A0055)</a></p>
+                    <p>Réactualisation immédiate de la fiche de poste pour qu'elle soit conforme à nos missions réelles
+                        (UHSI, SAMU, Médecine nucléaire, Pédiatrie, Psychiatrie). <br><br><a
+                            href="media/Ambulancier_A0055.pdf" target="_blank"
+                            style="color: var(--primary); font-weight: bold; text-decoration: underline;">Consulter la
+                            fiche de poste actuelle (A0055)</a></p>
                 </div>
                 <div class="demand-card">
                     <h3>Transport de Corps</h3>
-                    <p>Mise en place d'un cadre réglementaire clair et digne pour les plus de 1600 transports de corps effectués chaque année.</p>
+                    <p>Mise en place d'un cadre réglementaire clair et digne pour les plus de 1600 transports de corps
+                        effectués chaque année.</p>
                 </div>
                 <div class="demand-card">
                     <h3>Équité Inter-CHU</h3>
-                    <p>Pourquoi pas à Toulouse ? Les ambulanciers d'Angers et de Tours perçoivent déjà ces indemnités. Stop à l'injustice locale !</p>
+                    <p>Pourquoi pas à Toulouse ? Les ambulanciers d'Angers et de Tours perçoivent déjà ces indemnités.
+                        Stop à l'injustice locale !</p>
                 </div>
             </div>
         </section>
@@ -121,8 +139,10 @@
         <section id="cagnotte" class="cagnotte-banner">
             <div class="cagnotte-content">
                 <h2>Soutenez la Caisse de Grève</h2>
-                <p>Aidez les ambulanciers en lutte à tenir dans la durée. Chaque don compte pour compenser les pertes de salaire et financer notre combat.</p>
-                <a href="https://www.leetchi.com/fr/c/soutien-aux-ambulanciers-du-chu-de-toulouse-stop-a-linjustice-3865888?utm_source=whatsapp&utm_medium=social_sharing" target="_blank" class="btn-cagnotte">Je participe à la cagnotte Leetchi</a>
+                <p>Aidez les ambulanciers en lutte à tenir dans la durée. Chaque don compte pour compenser les pertes de
+                    salaire et financer notre combat.</p>
+                <a href="https://www.leetchi.com/fr/c/soutien-aux-ambulanciers-du-chu-de-toulouse-stop-a-linjustice-3865888?utm_source=whatsapp&utm_medium=social_sharing"
+                    target="_blank" class="btn-cagnotte">Je participe à la cagnotte Leetchi</a>
             </div>
             <div class="cagnotte-image">
                 <img src="photos/cagnotte.png" alt="Cagnotte Leetchi">
@@ -136,7 +156,8 @@
                     <div class="press-content">
                         <span class="press-source">SUD & CGT</span>
                         <p class="press-title">Communiqué du 11 Mai 2026</p>
-                        <p class="press-excerpt">Appel à la grève illimitée, présentation du mouvement et détail de nos revendications (NBI, IFR, fiche de poste).</p>
+                        <p class="press-excerpt">Appel à la grève illimitée, présentation du mouvement et détail de nos
+                            revendications (NBI, IFR, fiche de poste).</p>
                         <a href="media/communique_11_mai.pdf" target="_blank" class="btn-read">Lire le communiqué</a>
                     </div>
                 </div>
@@ -144,7 +165,8 @@
                     <div class="press-content">
                         <span class="press-source">SUD & CGT</span>
                         <p class="press-title">Communiqué du 14 Mai 2026</p>
-                        <p class="press-excerpt">Bilan des premières journées de mobilisation, poursuite du mouvement et état de la situation avec la direction.</p>
+                        <p class="press-excerpt">Bilan des premières journées de mobilisation, poursuite du mouvement et
+                            état de la situation avec la direction.</p>
                         <a href="media/communique_14_mai.pdf" target="_blank" class="btn-read">Lire le communiqué</a>
                     </div>
                 </div>
@@ -152,8 +174,10 @@
                     <div class="press-content">
                         <span class="press-source">SUD & CGT</span>
                         <p class="press-title">Communiqué du 27 Mai 2026</p>
-                        <p class="press-excerpt">Poursuite du mouvement. Les agents sont déterminés face à une direction mutique.</p>
-                        <a href="media/communique_presse_CHU_Toulouse27-05-26.pdf" target="_blank" class="btn-read">Lire le communiqué</a>
+                        <p class="press-excerpt">Poursuite du mouvement. Les agents sont déterminés face à une direction
+                            mutique.</p>
+                        <a href="media/communique_presse_CHU_Toulouse27-05-26.pdf" target="_blank" class="btn-read">Lire
+                            le communiqué</a>
                     </div>
                 </div>
             </div>
@@ -165,24 +189,33 @@
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">France 3 Régions</span>
-                        <p class="press-title">"On a demandé s'ils allaient nous virer, ils ont dit oui" : au 17e jour de grève, dialogue rompu au CHU</p>
-                        <p class="press-excerpt">Au 17e jour de grève illimitée, le dialogue est totalement rompu entre les agents ambulanciers et la direction générale du CHU de Toulouse. Les grévistes dénoncent des menaces de sanctions.</p>
-                        <a href="media/article_france3_dialogue_rompu.pdf" target="_blank" class="btn-read">Lire l'article</a>
+                        <p class="press-title">"On a demandé s'ils allaient nous virer, ils ont dit oui" : au 17e jour
+                            de grève, dialogue rompu au CHU</p>
+                        <p class="press-excerpt">Au 17e jour de grève illimitée, le dialogue est totalement rompu entre
+                            les agents ambulanciers et la direction générale du CHU de Toulouse. Les grévistes dénoncent
+                            des menaces de sanctions.</p>
+                        <a href="media/article_france3_dialogue_rompu.pdf" target="_blank" class="btn-read">Lire
+                            l'article</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">Actu Toulouse</span>
-                        <p class="press-title">"Guerre psychologique", "pneus dégonflés" : les ambulanciers du CHU durcissent leur grève</p>
-                        <p class="press-excerpt">Face à une direction qui reste sourde à leurs revendications, le ton monte. Les ambulanciers durcissent leurs actions de blocage sur les différents sites hospitaliers de Toulouse.</p>
-                        <a href="media/article_actu_toulouse_durcissent.pdf" target="_blank" class="btn-read">Lire l'article</a>
+                        <p class="press-title">"Guerre psychologique", "pneus dégonflés" : les ambulanciers du CHU
+                            durcissent leur grève</p>
+                        <p class="press-excerpt">Face à une direction qui reste sourde à leurs revendications, le ton
+                            monte. Les ambulanciers durcissent leurs actions de blocage sur les différents sites
+                            hospitaliers de Toulouse.</p>
+                        <a href="media/article_actu_toulouse_durcissent.pdf" target="_blank" class="btn-read">Lire
+                            l'article</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">La Dépêche</span>
                         <p class="press-title">Article du 28 Mai 2026</p>
-                        <p class="press-excerpt">Nouvel article de presse sur la mobilisation des ambulanciers du CHU de Toulouse.</p>
+                        <p class="press-excerpt">Nouvel article de presse sur la mobilisation des ambulanciers du CHU de
+                            Toulouse.</p>
                         <a href="media/la%20depeche%2028-05-26.pdf" target="_blank" class="btn-read">Lire l'article</a>
                     </div>
                 </div>
@@ -191,54 +224,73 @@
                         <span class="press-source">Lutte Ouvrière</span>
                         <p class="press-title">Ambulanciers hospitaliers en grève au CHU de Toulouse</p>
                         <p class="press-excerpt">Le combat des ambulanciers du CHU de Toulouse.</p>
-                        <a href="media/Lutte ouvriere CHU Toulouse _ Ambulanciers hospitalier...pdf" target="_blank" class="btn-read">Lire l'article</a>
+                        <a href="media/Lutte ouvriere CHU Toulouse _ Ambulanciers hospitalier...pdf" target="_blank"
+                            class="btn-read">Lire l'article</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">Europe</span>
                         <p class="press-title">Des activités particulières et complexes</p>
-                        <p class="press-excerpt">Reportage sur la grève des ambulanciers du CHU de Toulouse et la complexité de leurs missions.</p>
-                        <a href="media/Europe SAy _Des activités particulières et complex...pdf" target="_blank" class="btn-read">Lire l'article</a>
+                        <p class="press-excerpt">Reportage sur la grève des ambulanciers du CHU de Toulouse et la
+                            complexité de leurs missions.</p>
+                        <a href="media/Europe SAy _Des activités particulières et complex...pdf" target="_blank"
+                            class="btn-read">Lire l'article</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">Presse</span>
                         <p class="press-title">Grève des ambulanciers du CHU de Toulouse</p>
-                        <p class="press-excerpt">Dossier sur la mobilisation et les revendications du personnel ambulancier.</p>
-                        <a href="media/Grève des ambulanciers du CHU de Toulou...pdf" target="_blank" class="btn-read">Lire l'article</a>
+                        <p class="press-excerpt">Dossier sur la mobilisation et les revendications du personnel
+                            ambulancier.</p>
+                        <a href="media/Grève des ambulanciers du CHU de Toulou...pdf" target="_blank"
+                            class="btn-read">Lire l'article</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">Actu CHOLET</span>
                         <p class="press-title">Les ambulanciers du CHU de Toulouse en grève</p>
-                        <p class="press-excerpt">La mobilisation toulousaine s'exporte et fait parler d'elle au-delà de la région.</p>
-                        <a href="media/Actu CHOLET Les ambulanciers du CHU de Toulouse en ...pdf" target="_blank" class="btn-read">Lire l'article</a>
+                        <p class="press-excerpt">La mobilisation toulousaine s'exporte et fait parler d'elle au-delà de
+                            la région.</p>
+                        <a href="media/Actu CHOLET Les ambulanciers du CHU de Toulouse en ...pdf" target="_blank"
+                            class="btn-read">Lire l'article</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">ICI Occitanie</span>
-                        <p class="press-title">"Toujours plus, sans rétribution", les ambulanciers du CHU de Toulouse entament leur deuxième semaine de grève</p>
-                        <p class="press-excerpt">Les ambulanciers du CHU de Toulouse poursuivent leur mobilisation. Retrouvez l'article original sur <a href="https://www.ici.fr/occitanie/haute-garonne-31/toulouse/toujours-plus-sans-retribution-les-ambulanciers-du-chu-de-toulouse-entament-leur-deuxieme-semaine-de-greve-6746356" target="_blank" style="color: inherit; text-decoration: underline;">ICI Occitanie</a>.</p>
-                        <a href="media/article_ici_occitanie.pdf" target="_blank" class="btn-read">Lire l'article complet (PDF)</a>
+                        <p class="press-title">"Toujours plus, sans rétribution", les ambulanciers du CHU de Toulouse
+                            entament leur deuxième semaine de grève</p>
+                        <p class="press-excerpt">Les ambulanciers du CHU de Toulouse poursuivent leur mobilisation.
+                            Retrouvez l'article original sur <a
+                                href="https://www.ici.fr/occitanie/haute-garonne-31/toulouse/toujours-plus-sans-retribution-les-ambulanciers-du-chu-de-toulouse-entament-leur-deuxieme-semaine-de-greve-6746356"
+                                target="_blank" style="color: inherit; text-decoration: underline;">ICI Occitanie</a>.
+                        </p>
+                        <a href="media/article_ici_occitanie.pdf" target="_blank" class="btn-read">Lire l'article
+                            complet (PDF)</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">La Dépêche</span>
-                        <p class="press-title">En grève, les ambulanciers du CHU de Toulouse ralentissent les sorties des véhicules</p>
-                        <p class="press-excerpt">"On transporte des êtres vivants, pas des colis" : les ambulanciers du CHU de Toulouse ont entamé une grève illimitée. Ils dénoncent un manque de reconnaissance et réclament l'octroi de la NBI.</p>
-                        <a href="media/article_ladepeche.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
+                        <p class="press-title">En grève, les ambulanciers du CHU de Toulouse ralentissent les sorties
+                            des véhicules</p>
+                        <p class="press-excerpt">"On transporte des êtres vivants, pas des colis" : les ambulanciers du
+                            CHU de Toulouse ont entamé une grève illimitée. Ils dénoncent un manque de reconnaissance et
+                            réclament l'octroi de la NBI.</p>
+                        <a href="media/article_ladepeche.pdf" target="_blank" class="btn-read">Lire l'article
+                            complet</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">Actu.fr</span>
                         <p class="press-title">Un "glissement de tâches" dénoncé par les salariés en lutte</p>
-                        <p class="press-excerpt">Les ambulanciers confirment qu'ils exécutent des tâches parfois complexes, annexes à la fiche de poste initiale. Transporter des corps à la chambre mortuaire, ils l'ont toujours fait mais réclament un cadre légal.</p>
+                        <p class="press-excerpt">Les ambulanciers confirment qu'ils exécutent des tâches parfois
+                            complexes, annexes à la fiche de poste initiale. Transporter des corps à la chambre
+                            mortuaire, ils l'ont toujours fait mais réclament un cadre légal.</p>
                         <a href="media/article_actu.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
                     </div>
                 </div>
@@ -246,7 +298,9 @@
                     <div class="press-content">
                         <span class="press-source">Le Toulousain</span>
                         <p class="press-title">Grève illimitée entamée par les ambulanciers en lutte</p>
-                        <p class="press-excerpt">Le mouvement a débuté ce lundi 11 mai. Les agents réclament une revalorisation de leurs missions et l'équité avec les autres CHU de France qui perçoivent déjà les primes demandées.</p>
+                        <p class="press-excerpt">Le mouvement a débuté ce lundi 11 mai. Les agents réclament une
+                            revalorisation de leurs missions et l'équité avec les autres CHU de France qui perçoivent
+                            déjà les primes demandées.</p>
                         <a href="media/article_toulousain.pdf" target="_blank" class="btn-read">Lire le dossier</a>
                     </div>
                 </div>
@@ -254,26 +308,36 @@
                     <div class="press-content">
                         <span class="press-source">La Dépêche</span>
                         <p class="press-title">Des activités particulières et complexes qu’il faut revaloriser</p>
-                        <p class="press-excerpt">Sud alerte sur la rémunération des contractuels et le décalage entre les missions réelles sur le terrain et la reconnaissance administrative actuelle.</p>
-                        <a href="media/article_ladepeche2.pdf" target="_blank" class="btn-read">Lire l'article complet</a>
+                        <p class="press-excerpt">Sud alerte sur la rémunération des contractuels et le décalage entre
+                            les missions réelles sur le terrain et la reconnaissance administrative actuelle.</p>
+                        <a href="media/article_ladepeche2.pdf" target="_blank" class="btn-read">Lire l'article
+                            complet</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">France 3 Régions</span>
-                        <p class="press-title">Les ambulanciers du CHU réclament la NBI et une revalorisation de leurs missions</p>
-                        <p class="press-excerpt">Dossier complet sur les revendications des ambulanciers en lutte. Pourquoi le mouvement s'inscrit dans une démarche nationale de reconnaissance des métiers de l'urgence.</p>
+                        <p class="press-title">Les ambulanciers du CHU réclament la NBI et une revalorisation de leurs
+                            missions</p>
+                        <p class="press-excerpt">Dossier complet sur les revendications des ambulanciers en lutte.
+                            Pourquoi le mouvement s'inscrit dans une démarche nationale de reconnaissance des métiers de
+                            l'urgence.</p>
                         <a href="media/article_france3.pdf" target="_blank" class="btn-read">Consulter le dossier</a>
                     </div>
                 </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">ICI Occitanie</span>
-                        <p class="press-title">« Toujours plus, sans rétribution » : les ambulanciers du CHU de Toulouse entament leur deuxième semaine de grève</p>
-                        <p class="press-excerpt">Malgré l'absence de réponse concrète de la direction, le mouvement tient bon. Les ambulanciers du CHU de Toulouse entament leur deuxième semaine de grève illimitée et réaffirment leurs revendications.</p>
+                        <p class="press-title">« Toujours plus, sans rétribution » : les ambulanciers du CHU de Toulouse
+                            entament leur deuxième semaine de grève</p>
+                        <p class="press-excerpt">Malgré l'absence de réponse concrète de la direction, le mouvement
+                            tient bon. Les ambulanciers du CHU de Toulouse entament leur deuxième semaine de grève
+                            illimitée et réaffirment leurs revendications.</p>
                         <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
-                            <a href="https://www.ici.fr/occitanie/haute-garonne-31/toulouse/toujours-plus-sans-retribution-les-ambulanciers-du-chu-de-toulouse-entament-leur-deuxieme-semaine-de-greve-6746356" target="_blank" class="btn-read">Lire l'article en ligne</a>
-                            <a href="media/article_ici_2esemaine.pdf" target="_blank" class="btn-read" style="background: linear-gradient(135deg, #1a5f3e, #2d8a5e);">Télécharger le PDF</a>
+                            <a href="https://www.ici.fr/occitanie/haute-garonne-31/toulouse/toujours-plus-sans-retribution-les-ambulanciers-du-chu-de-toulouse-entament-leur-deuxieme-semaine-de-greve-6746356"
+                                target="_blank" class="btn-read">Lire l'article en ligne</a>
+                            <a href="media/article_ici_2esemaine.pdf" target="_blank" class="btn-read"
+                                style="background: linear-gradient(135deg, #1a5f3e, #2d8a5e);">Télécharger le PDF</a>
                         </div>
                     </div>
                 </div>
@@ -284,109 +348,162 @@
             <h2 class="section-title">Reportages TV & Médias</h2>
             <div class="video-grid">
                 <div class="video-card">
-                    <iframe src="LIEN_FRANCE_3_PARTIE_1_A_AJOUTER" title="12/13 France 3 partie 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/AaQ2T3ofVls" title="Reportage"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div class="video-info">
+                        <h4>Reportage TV</h4>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/km72RE7vD7c" title="12/13 France 3 partie 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>12/13 France 3 partie 1</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/6Red0Dbog_U" title="Intervention Hadrien Clouet Député LFI 31 Mai 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/6Red0Dbog_U"
+                        title="Intervention Hadrien Clouet Député LFI 31 Mai 2026"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Intervention Hadrien Clouet (Député LFI) - 31 Mai 2026</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/2vf-kXrt0fo" title="Flash info 12/13 France 3 du 28 Mai 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/2vf-kXrt0fo"
+                        title="Flash info 12/13 France 3 du 28 Mai 2026"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Flash info 12/13 France 3 du 28 Mai 2026</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/km72RE7vD7c?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc" title="France 3 Occitanie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/km72RE7vD7c?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc"
+                        title="France 3 Occitanie"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>France 3 Occitanie</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/wkFqnI6VTGo?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc" title="France 3 Occitanie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/wkFqnI6VTGo?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc"
+                        title="France 3 Occitanie"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>France 3 Occitanie</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/hN1y8yHBZdg?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc" title="La Dépêche" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/hN1y8yHBZdg?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc"
+                        title="La Dépêche"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>La Dépêche</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/ETDaumMzwl8?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc" title="Radio 100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/ETDaumMzwl8?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc"
+                        title="Radio 100%"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Radio 100%</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/cFOFdffROlM?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc" title="Révolution Permanente Toulouse" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/cFOFdffROlM?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc"
+                        title="Révolution Permanente Toulouse"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Révolution Permanente Toulouse</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/HL9lIa_auJs?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc" title="CGT Toulouse" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/HL9lIa_auJs?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc"
+                        title="CGT Toulouse"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>CGT Toulouse</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/qnufmsfFIyE" title="Soutien de Mme la députée Stambach-Terrenoir" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/qnufmsfFIyE"
+                        title="Soutien de Mme la députée Stambach-Terrenoir"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Mme la Députée Stambach-Terrenoir</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/Sf66mVGOQnE" title="NRJ Toulouse" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Sf66mVGOQnE" title="NRJ Toulouse"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>NRJ Toulouse</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/S8XGwbeTwm4" title="RTL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/S8XGwbeTwm4" title="RTL"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>RTL</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/6XWfpuic25A" title="Révolution Permanente" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/6XWfpuic25A" title="Révolution Permanente"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Révolution Permanente</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/IMIE_115bII" title="Reportage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/IMIE_115bII" title="Reportage"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Reportage</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/cYLWBr3u0_k" title="Reportage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/cYLWBr3u0_k" title="Reportage"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Reportage</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/NiJSrqE_ZdI" title="Reportage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/NiJSrqE_ZdI" title="Reportage"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Reportage</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/xpEIu5D43nY" title="Reportage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/xpEIu5D43nY" title="Reportage"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Reportage</h4>
                     </div>
                 </div>
                 <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/n38GQZtXkrI" title="Reportage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/n38GQZtXkrI" title="Reportage"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     <div class="video-info">
                         <h4>Reportage</h4>
                     </div>
@@ -396,26 +513,37 @@
 
         <section id="videos">
             <h2 class="section-title">Vidéos de la mobilisation</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Retrouvez toutes nos vidéos de mobilisation sur notre chaîne YouTube :</p>
+            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Retrouvez toutes nos vidéos de mobilisation
+                sur notre chaîne YouTube :</p>
             <div style="text-align: center; margin-top: 1rem;">
-                <iframe width="100%" height="500" style="max-width: 880px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" src="https://www.youtube.com/embed/videoseries?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc&si=DaktlgWaLWhMoYTF" title="Toutes les vidéos des ambulanciers en grève" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="500"
+                    style="max-width: 880px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);"
+                    src="https://www.youtube.com/embed/videoseries?list=PLobM5BMxwVJNbM-oMC3L4bveTrpEorGcc&si=DaktlgWaLWhMoYTF"
+                    title="Toutes les vidéos des ambulanciers en grève" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
         </section>
 
         <section id="mobilisation">
             <h2 class="section-title">Journal de Mobilisation</h2>
-            
+
             <!-- Jour 22 -->
             <div style="margin-bottom: 5rem;">
                 <span class="day-label">Jour 22 - 01 Juin 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j22">
-                        <div class="carousel-slide"><img src="photos/day22/WhatsApp Image 2026-06-01 at 15.33.33.jpeg" alt="Jour 22"></div>
-                        <div class="carousel-slide"><img src="photos/day22/WhatsApp Image 2026-06-01 at 15.33.33e.jpeg" alt="Jour 22"></div>
-                        <div class="carousel-slide"><img src="photos/day22/WhatsApp Image 2026-06-01 at 15.33.44.jpeg" alt="Jour 22"></div>
+                        <div class="carousel-slide"><img src="photos/day22/WhatsApp Image 2026-06-01 at 15.33.33.jpeg"
+                                alt="Jour 22"></div>
+                        <div class="carousel-slide"><img src="photos/day22/WhatsApp Image 2026-06-01 at 15.33.33e.jpeg"
+                                alt="Jour 22"></div>
+                        <div class="carousel-slide"><img src="photos/day22/WhatsApp Image 2026-06-01 at 15.33.44.jpeg"
+                                alt="Jour 22"></div>
                         <div class="carousel-slide"><img src="photos/day22/vid.jpeg" alt="Jour 22"></div>
-                        <div class="carousel-slide"><video src="photos/day22/WhatsApp Video 2026-06-01 at 15.33.33.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
-                        <div class="carousel-slide"><video src="photos/day22/WhatsApp Video 2026-06-01 at 15.33.44.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><video src="photos/day22/WhatsApp Video 2026-06-01 at 15.33.33.mp4"
+                                controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><video src="photos/day22/WhatsApp Video 2026-06-01 at 15.33.44.mp4"
+                                controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j22', -1)">&#10094;</button>
@@ -430,21 +558,36 @@
                 <span class="day-label">Jour 18 - 28 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j18">
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-27 at 17.38.39.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 08.49.37.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.51.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.55 (1).jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.55.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.56 (1).jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.56 (2).jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.56.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.27.47.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.27.48 (1).jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.27.48.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.28.04.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.28.05.jpeg" alt="Jour 18"></div>
-                        <div class="carousel-slide"><video src="photos/day18/WhatsApp Video 2026-05-28 at 07.44.21.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
-                        <div class="carousel-slide"><video src="photos/day18/WhatsApp Video 2026-05-28 at 09.52.13.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-27 at 17.38.39.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 08.49.37.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.51.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.55 (1).jpeg" alt="Jour 18"></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.55.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.56 (1).jpeg" alt="Jour 18"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.56 (2).jpeg" alt="Jour 18"></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.18.56.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.27.47.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day18/WhatsApp Image 2026-05-28 at 10.27.48 (1).jpeg" alt="Jour 18"></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.27.48.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.28.04.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><img src="photos/day18/WhatsApp Image 2026-05-28 at 10.28.05.jpeg"
+                                alt="Jour 18"></div>
+                        <div class="carousel-slide"><video src="photos/day18/WhatsApp Video 2026-05-28 at 07.44.21.mp4"
+                                controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><video src="photos/day18/WhatsApp Video 2026-05-28 at 09.52.13.mp4"
+                                controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j18', -1)">&#10094;</button>
@@ -462,38 +605,71 @@
                         <div class="carousel-slide"><img src="photos/day16/45EE.jpg" alt="Jour 16"></div>
                         <div class="carousel-slide"><img src="photos/day16/46.png" alt="Jour 16"></div>
                         <div class="carousel-slide"><img src="photos/day16/47.png" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/706199594_1009145111506392_8715640863332891913_n.jpg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.18.52ZZ.jpg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.32.08AA.jpg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.51.22SS.jpg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.58.39 (3).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.58.39.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.58.3966.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.10.20.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.17.33.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.17.34.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.17.3466.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.27.46.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.55.26.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.55.37.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.57.38.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.57.386.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.03.26.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.24 (1).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.24 (2).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.24.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (1).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (2).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (3).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (4).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (5).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.26 (1).jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.26.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.48.13.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 15.33.05.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 15.40.15.jpeg" alt="Jour 16"></div>
-                        <div class="carousel-slide"><video src="photos/day16/mobilisation 26-25-26.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/706199594_1009145111506392_8715640863332891913_n.jpg" alt="Jour 16">
+                        </div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.18.52ZZ.jpg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.32.08AA.jpg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.51.22SS.jpg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 08.58.39 (3).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.58.39.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.58.3966.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.10.20.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.17.33.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.17.34.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.17.3466.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.27.46.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.55.26.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.55.37.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.57.38.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 10.57.386.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.03.26.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.24 (1).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.24 (2).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.24.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (1).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (2).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (3).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (4).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25 (5).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.25.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.26 (1).jpeg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.24.26.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 11.48.13.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 15.33.05.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 15.40.15.jpeg"
+                                alt="Jour 16"></div>
+                        <div class="carousel-slide"><video src="photos/day16/mobilisation 26-25-26.mp4" controls
+                                style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j16', -1)">&#10094;</button>
@@ -508,9 +684,12 @@
                 <span class="day-label">Jour 12 - 22 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j12">
-                        <div class="carousel-slide"><img src="photos/day12/WhatsApp Image 2026-05-22 at 07.39.19.jpeg" alt="Jour 12"></div>
-                        <div class="carousel-slide"><img src="photos/day12/WhatsApp Image 2026-05-22 at 07.39ss.18.jpeg" alt="Jour 12"></div>
-                        <div class="carousel-slide"><img src="photos/day12/WhatsApp Image 2026-05-22 at ss.jpeg" alt="Jour 12"></div>
+                        <div class="carousel-slide"><img src="photos/day12/WhatsApp Image 2026-05-22 at 07.39.19.jpeg"
+                                alt="Jour 12"></div>
+                        <div class="carousel-slide"><img src="photos/day12/WhatsApp Image 2026-05-22 at 07.39ss.18.jpeg"
+                                alt="Jour 12"></div>
+                        <div class="carousel-slide"><img src="photos/day12/WhatsApp Image 2026-05-22 at ss.jpeg"
+                                alt="Jour 12"></div>
                         <div class="carousel-slide"><img src="photos/day12/aaa.jpeg" alt="Jour 12"></div>
                         <div class="carousel-slide"><img src="photos/day12/ssss.jpeg" alt="Jour 12"></div>
                     </div>
@@ -527,8 +706,10 @@
                 <span class="day-label">Jour 11 - 21 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j11">
-                        <div class="carousel-slide"><img src="photos/day11/WhatsApp Image 2026-05-21 at 07.04.36.jpeg" alt="Jour 11"></div>
-                        <div class="carousel-slide"><img src="photos/day11/WhatsApp Image 2026-05-21 at 08.32.56.jpeg" alt="Jour 11"></div>
+                        <div class="carousel-slide"><img src="photos/day11/WhatsApp Image 2026-05-21 at 07.04.36.jpeg"
+                                alt="Jour 11"></div>
+                        <div class="carousel-slide"><img src="photos/day11/WhatsApp Image 2026-05-21 at 08.32.56.jpeg"
+                                alt="Jour 11"></div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j11', -1)">&#10094;</button>
@@ -543,12 +724,18 @@
                 <span class="day-label">Jour 10 - 20 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j10">
-                        <div class="carousel-slide"><img src="photos/day10/WhatsApp Image 2026-05-20 at 15.25.38.jpeg" alt="Jour 10"></div>
-                        <div class="carousel-slide"><img src="photos/day10/WhatsApp Image 2026-05-20 at 15.25.38 (2).jpeg" alt="Jour 10"></div>
-                        <div class="carousel-slide"><img src="photos/day10/WhatsApp Image 2026-05-20 at 15.25.38 (3).jpeg" alt="Jour 10"></div>
-                        <div class="carousel-slide"><video src="photos/day10/WhatsApp Video 2026-05-20 at 15.25.36.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
-                        <div class="carousel-slide"><video src="photos/day10/WhatsApp Video 2026-05-20 at 15.25.37.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
-                        <div class="carousel-slide"><video src="photos/day10/WhatsApp Video 2026-05-20 at 15.25.38.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><img src="photos/day10/WhatsApp Image 2026-05-20 at 15.25.38.jpeg"
+                                alt="Jour 10"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day10/WhatsApp Image 2026-05-20 at 15.25.38 (2).jpeg" alt="Jour 10"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day10/WhatsApp Image 2026-05-20 at 15.25.38 (3).jpeg" alt="Jour 10"></div>
+                        <div class="carousel-slide"><video src="photos/day10/WhatsApp Video 2026-05-20 at 15.25.36.mp4"
+                                controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><video src="photos/day10/WhatsApp Video 2026-05-20 at 15.25.37.mp4"
+                                controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><video src="photos/day10/WhatsApp Video 2026-05-20 at 15.25.38.mp4"
+                                controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j10', -1)">&#10094;</button>
@@ -563,10 +750,13 @@
                 <span class="day-label">Jour 9 - 19 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j9">
-                        <div class="carousel-slide"><video src="photos/day9/WhatsApp Video 2026-05-19 at 10.10.16.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                        <div class="carousel-slide"><video src="photos/day9/WhatsApp Video 2026-05-19 at 10.10.16.mp4"
+                                controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
                         <div class="carousel-slide"><img src="photos/day9/19 Mai 2026.jpeg" alt="Jour 9"></div>
-                        <div class="carousel-slide"><img src="photos/day9/WhatsApp Image 2026-05-19 at 16.02.34 (1).jpeg" alt="Jour 9"></div>
-                        <div class="carousel-slide"><img src="photos/day9/WhatsApp Image 2026-05-19 at 16.02.34.jpeg" alt="Jour 9"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day9/WhatsApp Image 2026-05-19 at 16.02.34 (1).jpeg" alt="Jour 9"></div>
+                        <div class="carousel-slide"><img src="photos/day9/WhatsApp Image 2026-05-19 at 16.02.34.jpeg"
+                                alt="Jour 9"></div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j9', -1)">&#10094;</button>
@@ -575,32 +765,52 @@
                 </div>
                 <p class="carousel-legend">Actions et rassemblements du 19 Mai.</p>
             </div>
-            
+
             <!-- Jour 8 -->
             <div style="margin-bottom: 5rem;">
                 <span class="day-label">Jour 8 - 18 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j8">
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 11.05.13.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.24.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.25.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.256.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.25a.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.25d.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.26d.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.26s.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.32.37.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.38.42.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.39.01.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.41.08.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.41.52.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.41.54.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.19 (1).jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.19.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.20 (1).jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.20 (2).jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.20.jpeg" alt="Jour 8"></div>
-                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.21.jpeg" alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 11.05.13.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.24.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.25.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.256.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.25a.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.25d.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.26d.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 14.28.26s.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.32.37.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.38.42.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.39.01.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.41.08.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.41.52.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.41.54.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.19 (1).jpeg" alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.19.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.20 (1).jpeg" alt="Jour 8"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.20 (2).jpeg" alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.20.jpeg"
+                                alt="Jour 8"></div>
+                        <div class="carousel-slide"><img src="photos/day8/WhatsApp Image 2026-05-18 at 16.48.21.jpeg"
+                                alt="Jour 8"></div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j8', -1)">&#10094;</button>
@@ -609,19 +819,33 @@
                 </div>
                 <p class="carousel-legend">Actions et rassemblements du 18 Mai.</p>
             </div>
-            
+
             <!-- Jour 3 -->
             <div style="margin-bottom: 5rem;">
                 <span class="day-label">Jour 3 - 13 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j3">
-                        <div class="carousel-slide"><img src="photos/day3/694462155_10244691034635907_8361900220887142253_n.jpg" alt="Jour 3"></div>
-                        <div class="carousel-slide"><img src="photos/day3/696714875_10244691031955840_8410675272712332622_ncopie.png" alt="Jour 3"></div>
-                        <div class="carousel-slide"><img src="photos/day3/697039761_10244691028155745_2403951587694131604_n.jpg" alt="Jour 3"></div>
-                        <div class="carousel-slide"><img src="photos/day3/698335722_10244691030355800_1123320517088156647_n.jpg" alt="Jour 3"></div>
-                        <div class="carousel-slide"><img src="photos/day3/699273811_10244691032635857_1099278180833190211_n.jpg" alt="Jour 3"></div>
-                        <div class="carousel-slide"><img src="photos/day3/699852276_10244691029035767_4568751240283522394_n.jpg" alt="Jour 3"></div>
-                        <div class="carousel-slide"><img src="photos/day3/699987775_10244691030875813_2912195923042290921_n.jpg" alt="Jour 3"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day3/694462155_10244691034635907_8361900220887142253_n.jpg" alt="Jour 3">
+                        </div>
+                        <div class="carousel-slide"><img
+                                src="photos/day3/696714875_10244691031955840_8410675272712332622_ncopie.png"
+                                alt="Jour 3"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day3/697039761_10244691028155745_2403951587694131604_n.jpg" alt="Jour 3">
+                        </div>
+                        <div class="carousel-slide"><img
+                                src="photos/day3/698335722_10244691030355800_1123320517088156647_n.jpg" alt="Jour 3">
+                        </div>
+                        <div class="carousel-slide"><img
+                                src="photos/day3/699273811_10244691032635857_1099278180833190211_n.jpg" alt="Jour 3">
+                        </div>
+                        <div class="carousel-slide"><img
+                                src="photos/day3/699852276_10244691029035767_4568751240283522394_n.jpg" alt="Jour 3">
+                        </div>
+                        <div class="carousel-slide"><img
+                                src="photos/day3/699987775_10244691030875813_2912195923042290921_n.jpg" alt="Jour 3">
+                        </div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j3', -1)">&#10094;</button>
@@ -636,13 +860,22 @@
                 <span class="day-label">Jour 2 - 12 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j2">
-                        <div class="carousel-slide"><img src="photos/day2/696778884_10167209631204692_4000307855302707896_n.jpg" alt="Jour 2"></div>
-                        <div class="carousel-slide"><img src="photos/day2/696883368_10167209631629692_1559613689331050770_n.jpg" alt="Jour 2"></div>
-                        <div class="carousel-slide"><img src="photos/day2/696919794_10167209630714692_4414958693108669089_n.jpg" alt="Jour 2"></div>
-                        <div class="carousel-slide"><img src="photos/day2/697132672_10167209630999692_1889489182291959005_n.jpg" alt="Jour 2"></div>
+                        <div class="carousel-slide"><img
+                                src="photos/day2/696778884_10167209631204692_4000307855302707896_n.jpg" alt="Jour 2">
+                        </div>
+                        <div class="carousel-slide"><img
+                                src="photos/day2/696883368_10167209631629692_1559613689331050770_n.jpg" alt="Jour 2">
+                        </div>
+                        <div class="carousel-slide"><img
+                                src="photos/day2/696919794_10167209630714692_4414958693108669089_n.jpg" alt="Jour 2">
+                        </div>
+                        <div class="carousel-slide"><img
+                                src="photos/day2/697132672_10167209630999692_1889489182291959005_n.jpg" alt="Jour 2">
+                        </div>
                         <div class="carousel-slide"><img src="photos/day2/IMG_20260512_103902.jpg" alt="Jour 2"></div>
                         <div class="carousel-slide"><img src="photos/day2/IMG_20260512_123304.jpg" alt="Jour 2"></div>
-                        <div class="carousel-slide"><img src="photos/day2/WhatsApp Image 2026-05-12 at 14.37.18.jpeg" alt="Jour 2"></div>
+                        <div class="carousel-slide"><img src="photos/day2/WhatsApp Image 2026-05-12 at 14.37.18.jpeg"
+                                alt="Jour 2"></div>
 
                         <!-- ... More files could be added here, limited for brevity but included in the folder ... -->
                     </div>
@@ -662,8 +895,10 @@
                         <div class="carousel-slide"><img src="photos/day1/IMG_20260511_070704.jpg" alt="Jour 1"></div>
                         <div class="carousel-slide"><img src="photos/day1/IMG_20260511_085652.jpg" alt="Jour 1"></div>
                         <div class="carousel-slide"><img src="photos/day1/IMG_20260511_100323.jpg" alt="Jour 1"></div>
-                        <div class="carousel-slide"><img src="photos/day1/WhatsApp Image 2026-05-11 at 08.38.33.jpeg" alt="Jour 1"></div>
-                        <div class="carousel-slide"><img src="photos/day1/WhatsApp Image 2026-05-11 at 09.33.48.jpeg" alt="Jour 1"></div>
+                        <div class="carousel-slide"><img src="photos/day1/WhatsApp Image 2026-05-11 at 08.38.33.jpeg"
+                                alt="Jour 1"></div>
+                        <div class="carousel-slide"><img src="photos/day1/WhatsApp Image 2026-05-11 at 09.33.48.jpeg"
+                                alt="Jour 1"></div>
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" onclick="moveCarousel('track-j1', -1)">&#10094;</button>
@@ -676,28 +911,33 @@
 
         <section id="temoignages">
             <h2 class="section-title">Vos témoignages de soutien</h2>
-            
+
             <div class="leave-message-container">
                 <form id="support-form" class="support-form">
                     <h3>Laissez un message de soutien</h3>
-                    <p id="form-info" style="margin-bottom: 1.5rem; color: #555; font-size: 0.95rem;">Votre message sera envoyé pour modération. Il apparaîtra publiquement sur le blog après validation.</p>
-                    
+                    <p id="form-info" style="margin-bottom: 1.5rem; color: #555; font-size: 0.95rem;">Votre message sera
+                        envoyé pour modération. Il apparaîtra publiquement sur le blog après validation.</p>
+
                     <div class="form-group">
                         <input type="text" id="support-name" name="Nom" placeholder="Votre Nom / Prénom" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="support-message" name="Message" placeholder="Écrivez votre message de soutien ici..." rows="4" required></textarea>
+                        <textarea id="support-message" name="Message"
+                            placeholder="Écrivez votre message de soutien ici..." rows="4" required></textarea>
                     </div>
-                    
+
                     <!-- Configuration FormSubmit -->
-                    <input type="hidden" name="_subject" value="Nouveau message de soutien sur le blog Ambulanciers CHU !">
+                    <input type="hidden" name="_subject"
+                        value="Nouveau message de soutien sur le blog Ambulanciers CHU !">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
-                    
+
                     <button type="submit" class="btn-submit">Envoyer mon message</button>
-                    
-                    <div id="form-success-msg" style="display: none; text-align: center; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 1.5rem; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
-                        Merci ! Votre message a bien été enregistré. Il apparaîtra sur la page après vérification par notre équipe.
+
+                    <div id="form-success-msg"
+                        style="display: none; text-align: center; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 1.5rem; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
+                        Merci ! Votre message a bien été enregistré. Il apparaîtra sur la page après vérification par
+                        notre équipe.
                     </div>
                 </form>
             </div>
@@ -705,22 +945,43 @@
             <div class="testimonials-grid" id="testimonials-grid">
                 <div class="testimonial-card">
                     <p class="testimonial-content">
-                        Je constate que les choses ont encore du mal à évoluer sur ce service qui mérite une organisation vraiment précise et une reconnaissance des agents . J’ai connu vos conditions de travail , les difficultés , le management et autres .<br><br>
-                        Je ne regrette pas mon passage au sein du service et je ne regrette pas d’avoir exercé à vos côtés et non au-dessus de vous .<span id="dots-tb">...</span><span id="more-tb" style="display: none;"><br><br>
-                        En toute sincérité , j’ai découvert une nouvelle institution avec des femmes et des hommes engagés . Un monde à découvrir car il est méconnu et pas du tout reconnu dans sa spécificité<br><br>
-                        Je n’ai jamais décidé de partir à cause des agents mais en raison du manque de considération et d’humanité envers vous . Le management ne me correspondait pas et il était contraire à mes propres valeurs humaines .<br><br>
-                        On m’a reproché le fait d’avoir été sans filtre avec vous . J’ai été honoré de l’avoir été car j’ai toujours exercé ainsi .<br><br>
-                        Pour moi , vous avez toujours su vous libérer , vous adapter , vous porter volontaires pour assurer la mission pour les patients et non pour des « cartons ».<br><br>
-                        Il y a beaucoup trop d’intermédiaire pour manager une équipe donc beaucoup de visions divergentes .<br><br>
-                        Votre cause est noble . Je suis étonné de constater que la goutte a fait déborder le vase après toutes ces années .<br><br>
-                        Je suis surpris de voir que l’on vous a ajouté des missions à risques sans aucune formation spécifique . Je suis effaré d’apprendre sue vous devez porter des GPB pour exercer une mission.<br><br>
-                        En ce qui me concerne , je ne me suis jamais placé au-dessus de l’équipe . J’ai ma façon de manager , elle n’était pas en adéquation avec le cadre donc j’ai préféré jeter l’éponge .<br><br>
-                        Nous ne gérons pas des femmes et des hommes sur un planning mais des humains qui sont exposés sur le plan psychologue et sur le plan de leur propre santé . N’oublions pas qu’il y a des familles qui vous attendent et qui partage le mal être de retour à la maison .<br><br>
-                        J’ai appris qu’il y a eu des changements sur les plannings , dommage de perdre du temps alors que les choses auraient pu se faire à l’époque .<br><br>
-                        Sachez que je garde vraiment un très bon souvenir de la team .<br><br>
-                        Allez ! Je reviens et je gère à ma façon
+                        Je constate que les choses ont encore du mal à évoluer sur ce service qui mérite une
+                        organisation vraiment précise et une reconnaissance des agents . J’ai connu vos conditions de
+                        travail , les difficultés , le management et autres .<br><br>
+                        Je ne regrette pas mon passage au sein du service et je ne regrette pas d’avoir exercé à vos
+                        côtés et non au-dessus de vous .<span id="dots-tb">...</span><span id="more-tb"
+                            style="display: none;"><br><br>
+                            En toute sincérité , j’ai découvert une nouvelle institution avec des femmes et des hommes
+                            engagés . Un monde à découvrir car il est méconnu et pas du tout reconnu dans sa
+                            spécificité<br><br>
+                            Je n’ai jamais décidé de partir à cause des agents mais en raison du manque de considération
+                            et d’humanité envers vous . Le management ne me correspondait pas et il était contraire à
+                            mes propres valeurs humaines .<br><br>
+                            On m’a reproché le fait d’avoir été sans filtre avec vous . J’ai été honoré de l’avoir été
+                            car j’ai toujours exercé ainsi .<br><br>
+                            Pour moi , vous avez toujours su vous libérer , vous adapter , vous porter volontaires pour
+                            assurer la mission pour les patients et non pour des « cartons ».<br><br>
+                            Il y a beaucoup trop d’intermédiaire pour manager une équipe donc beaucoup de visions
+                            divergentes .<br><br>
+                            Votre cause est noble . Je suis étonné de constater que la goutte a fait déborder le vase
+                            après toutes ces années .<br><br>
+                            Je suis surpris de voir que l’on vous a ajouté des missions à risques sans aucune formation
+                            spécifique . Je suis effaré d’apprendre sue vous devez porter des GPB pour exercer une
+                            mission.<br><br>
+                            En ce qui me concerne , je ne me suis jamais placé au-dessus de l’équipe . J’ai ma façon de
+                            manager , elle n’était pas en adéquation avec le cadre donc j’ai préféré jeter l’éponge
+                            .<br><br>
+                            Nous ne gérons pas des femmes et des hommes sur un planning mais des humains qui sont
+                            exposés sur le plan psychologue et sur le plan de leur propre santé . N’oublions pas qu’il y
+                            a des familles qui vous attendent et qui partage le mal être de retour à la maison .<br><br>
+                            J’ai appris qu’il y a eu des changements sur les plannings , dommage de perdre du temps
+                            alors que les choses auraient pu se faire à l’époque .<br><br>
+                            Sachez que je garde vraiment un très bon souvenir de la team .<br><br>
+                            Allez ! Je reviens et je gère à ma façon
                         </span>
-                        <a href="javascript:void(0);" onclick="toggleTestimonialTB()" id="btn-tb" style="color: var(--primary); font-weight: bold; text-decoration: none; display: block; margin-top: 10px;">Voir plus</a>
+                        <a href="javascript:void(0);" onclick="toggleTestimonialTB()" id="btn-tb"
+                            style="color: var(--primary); font-weight: bold; text-decoration: none; display: block; margin-top: 10px;">Voir
+                            plus</a>
                     </p>
                     <span class="testimonial-name">Thierry Brugère</span>
                     <span class="testimonial-date">18 Mai 2026</span>
@@ -741,7 +1002,8 @@
                     <span class="testimonial-date">il y a un jour (modifié)</span>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-content">Force à vous ! J'espère que vous arriverez à faire entendre votre voix</p>
+                    <p class="testimonial-content">Force à vous ! J'espère que vous arriverez à faire entendre votre
+                        voix</p>
                     <span class="testimonial-name">Yann Lemaire</span>
                     <span class="testimonial-date">il y a 6 jours</span>
                 </div>
@@ -770,12 +1032,14 @@
                     <span class="testimonial-name">Géraldine</span>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-content">Vous êtes au top, merci pour votre professionnalisme. Vous méritez vos revendications et plus encore.</p>
+                    <p class="testimonial-content">Vous êtes au top, merci pour votre professionnalisme. Vous méritez
+                        vos revendications et plus encore.</p>
                     <span class="testimonial-name">Alicia Gabbani</span>
                     <span class="testimonial-date">Aujourd'hui</span>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-content">Nous vivons un moment de l’histoire où certains dirigeants pensent qu’on peut s’assoir sur le droit… Vous leur montrez que non et nous vous y aidons…</p>
+                    <p class="testimonial-content">Nous vivons un moment de l’histoire où certains dirigeants pensent
+                        qu’on peut s’assoir sur le droit… Vous leur montrez que non et nous vous y aidons…</p>
                     <span class="testimonial-name">Annie ROUET</span>
                     <span class="testimonial-date">il y a 6 heures</span>
                 </div>
@@ -790,7 +1054,8 @@
                     <span class="testimonial-date">il y a 7 jours</span>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-content">Merci à nos héros de l'ombre de répondre présent, malgré leurs conditions de travail et l'absence de reconnaissance 👏🏻❤️</p>
+                    <p class="testimonial-content">Merci à nos héros de l'ombre de répondre présent, malgré leurs
+                        conditions de travail et l'absence de reconnaissance 👏🏻❤️</p>
                     <span class="testimonial-name">Oceane DELORME</span>
                     <span class="testimonial-date">il y a 7 jours</span>
                 </div>
@@ -808,48 +1073,70 @@
 
         <section id="soutiens-syndicaux">
             <h2 class="section-title">Nos Soutiens</h2>
-            
-            <div style="text-align: center; margin-bottom: 2rem; background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Un immense merci aux humoristes soignants pour leur soutien :</h3>
-                <p style="font-size: 1.2rem; font-weight: bold; color: #333;">Caroline Estremo, JBinobile, Nathan Neige, Guillaume Goux, Hassan de Monaco</p>
+
+            <div
+                style="text-align: center; margin-bottom: 2rem; background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Un immense merci aux humoristes soignants pour
+                    leur soutien :</h3>
+                <p style="font-size: 1.2rem; font-weight: bold; color: #333;">Caroline Estremo, JBinobile, Nathan Neige,
+                    Guillaume Goux, Hassan de Monaco</p>
             </div>
 
-            <div style="text-align: center; margin-bottom: 2rem; background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Un grand merci également pour le soutien de :</h3>
-                <p style="font-size: 1.1rem; color: #333; line-height: 1.5;">Le Personnel soignant (Internes, Infirmières, Aides soignantes, Brancardiers) et les équipes du SAMU des CHU de Toulouse, ainsi que les Ambulanciers des CHU de Montpellier, Tours et Angers.</p>
+            <div
+                style="text-align: center; margin-bottom: 2rem; background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Un grand merci également pour le soutien de :
+                </h3>
+                <p style="font-size: 1.1rem; color: #333; line-height: 1.5;">Le Personnel soignant (Internes,
+                    Infirmières, Aides soignantes, Brancardiers) et les équipes du SAMU des CHU de Toulouse, ainsi que
+                    les Ambulanciers des CHU de Montpellier, Tours et Angers.</p>
             </div>
 
             <div class="unions-grid">
-                <a href="https://sudsantesociaux31.org/" target="_blank" class="union-card" style="text-decoration: none; color: inherit;">
+                <a href="https://sudsantesociaux31.org/" target="_blank" class="union-card"
+                    style="text-decoration: none; color: inherit;">
                     <div class="logo-box">
                         <img src="photos/syndicats/logo.png" alt="SUD Santé Sociaux 31">
                     </div>
                     <span>SUD Santé Sociaux 31</span>
                 </a>
-                <a href="https://cgtchutoulouse.fr/" target="_blank" class="union-card" style="text-decoration: none; color: inherit;">
+                <a href="https://cgtchutoulouse.fr/" target="_blank" class="union-card"
+                    style="text-decoration: none; color: inherit;">
                     <div class="logo-box">
                         <img src="photos/syndicats/cropped-logo-CGT-CHU-1-e1767881812281.webp" alt="CGT CHU Toulouse">
                     </div>
                     <span>CGT CHU Toulouse</span>
                 </a>
-                <a href="https://www.lafrance-insoumise.fr/" target="_blank" class="union-card" style="text-decoration: none; color: inherit;">
+                <a href="https://www.lafrance-insoumise.fr/" target="_blank" class="union-card"
+                    style="text-decoration: none; color: inherit;">
                     <div class="logo-box">
                         <img src="photos/syndicats/lfi.png" alt="La France Insoumise">
                     </div>
                     <span>La France Insoumise</span>
                 </a>
-                <a href="media/lettre_lfi_dg.pdf" target="_blank" class="union-card" style="text-decoration: none; color: inherit; max-width: 250px;">
-                    <div class="logo-box" style="display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 8px;">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e63946;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <a href="media/lettre_lfi_dg.pdf" target="_blank" class="union-card"
+                    style="text-decoration: none; color: inherit; max-width: 250px;">
+                    <div class="logo-box"
+                        style="display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 8px;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e63946;">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
                     </div>
                     <div style="text-align: center;">
                         <span style="display: block; font-weight: 700; margin-bottom: 5px;">Lettre LFI</span>
-                        <span style="display: block; font-size: 0.8rem; color: #555; font-weight: normal; line-height: 1.3;">Courrier adressé au Directeur Général du CHU de Toulouse</span>
+                        <span
+                            style="display: block; font-size: 0.8rem; color: #555; font-weight: normal; line-height: 1.3;">Courrier
+                            adressé au Directeur Général du CHU de Toulouse</span>
                     </div>
                 </a>
                 <a href="#" class="union-card" style="text-decoration: none; color: inherit;">
                     <div class="logo-box">
-                        <img src="photos/syndicats/logo_fse.jpg" alt="FSE" class="fse-logo" style="max-width: 130px; max-height: 90px; width: 100%; object-fit: contain;">
+                        <img src="photos/syndicats/logo_fse.jpg" alt="FSE" class="fse-logo"
+                            style="max-width: 130px; max-height: 90px; width: 100%; object-fit: contain;">
                     </div>
                     <span>FSE</span>
                 </a>
@@ -858,7 +1145,8 @@
 
         <section id="full-tract">
             <h2 class="section-title">Le Tract de Mobilisation</h2>
-            <p style="margin-bottom: 2rem; color: #555;">Retrouvez l'intégralité de nos revendications et de l'appel à la grève ci-dessous :</p>
+            <p style="margin-bottom: 2rem; color: #555;">Retrouvez l'intégralité de nos revendications et de l'appel à
+                la grève ci-dessous :</p>
             <div class="tract-viewer">
                 <div class="tract-page gallery-item">
                     <img src="photos/tract1.jpg" alt="Tract Page 1">
@@ -868,25 +1156,35 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="photos/tract1.jpg" download class="btn-cagnotte" style="font-size: 0.9rem; padding: 0.8rem 1.5rem;">Télécharger le tract (JPG)</a>
+                <a href="photos/tract1.jpg" download class="btn-cagnotte"
+                    style="font-size: 0.9rem; padding: 0.8rem 1.5rem;">Télécharger le tract (JPG)</a>
             </div>
         </section>
 
         <section id="partage" class="social-share-section">
             <h2 class="section-title">Partagez notre combat</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Plus nous serons visibles, plus nous serons entendus. Aidez-nous en partageant le blog :</p>
+            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Plus nous serons visibles, plus nous serons
+                entendus. Aidez-nous en partageant le blog :</p>
             <div class="share-buttons">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://dainty-youtiao-a0570b.netlify.app/" target="_blank" class="share-btn facebook-btn">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://dainty-youtiao-a0570b.netlify.app/"
+                    target="_blank" class="share-btn facebook-btn">
                     <svg viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V7.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
-                        <path d="M16.671 15.543l.531-3.47h-3.328V9.824c0-.949.464-1.874 1.956-1.874h1.514V5.011s-1.374-.235-2.686-.235c-2.74 0-4.533 1.662-4.533 4.67v2.628H7.078v3.47h3.047v8.385a12.09 12.09 0 003.75 0v-8.385h2.796z" fill="#FFF"/>
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V7.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                            fill="#1877F2" />
+                        <path
+                            d="M16.671 15.543l.531-3.47h-3.328V9.824c0-.949.464-1.874 1.956-1.874h1.514V5.011s-1.374-.235-2.686-.235c-2.74 0-4.533 1.662-4.533 4.67v2.628H7.078v3.47h3.047v8.385a12.09 12.09 0 003.75 0v-8.385h2.796z"
+                            fill="#FFF" />
                     </svg>
                     Facebook
                 </a>
-                <a href="https://api.whatsapp.com/send?text=Soutenez%20les%20ambulanciers%20du%20CHU%20de%20Toulouse%20en%20gr%C3%A8ve%20!%20%0Ahttps://dainty-youtiao-a0570b.netlify.app/" target="_blank" class="share-btn whatsapp-btn">
+                <a href="https://api.whatsapp.com/send?text=Soutenez%20les%20ambulanciers%20du%20CHU%20de%20Toulouse%20en%20gr%C3%A8ve%20!%20%0Ahttps://dainty-youtiao-a0570b.netlify.app/"
+                    target="_blank" class="share-btn whatsapp-btn">
                     <svg viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#25D366" d="M11.975 0C5.353 0 0 5.354 0 11.975c0 2.651.862 5.105 2.333 7.106L.516 24l5.143-1.636c1.922 1.258 4.195 1.986 6.316 1.986 6.621 0 11.974-5.353 11.974-11.975S18.597 0 11.975 0z"/>
-                        <path fill="#FFF" d="M17.77 14.496c-.318-.16-1.884-.93-2.176-1.036-.291-.106-.503-.16-.715.16-.212.318-.821 1.036-1.006 1.248-.186.212-.371.238-.689.079-2.311-1.157-3.914-2.827-4.832-4.37-.186-.318.186-.291.503-.927.106-.212.053-.398-.026-.557-.079-.16-.715-1.722-.979-2.358-.26-.615-.521-.531-.715-.541-.186-.011-.398-.011-.61-.011-.212 0-.557.079-.848.398-.291.318-1.113 1.087-1.113 2.65 0 1.564 1.14 3.075 1.299 3.287.16.212 2.242 3.42 5.432 4.797 2.056.887 2.868.969 3.927.81 1.229-.185 2.821-1.152 3.218-2.265.398-1.113.398-2.067.278-2.265-.119-.204-.435-.323-.753-.483z"/>
+                        <path fill="#25D366"
+                            d="M11.975 0C5.353 0 0 5.354 0 11.975c0 2.651.862 5.105 2.333 7.106L.516 24l5.143-1.636c1.922 1.258 4.195 1.986 6.316 1.986 6.621 0 11.974-5.353 11.974-11.975S18.597 0 11.975 0z" />
+                        <path fill="#FFF"
+                            d="M17.77 14.496c-.318-.16-1.884-.93-2.176-1.036-.291-.106-.503-.16-.715.16-.212.318-.821 1.036-1.006 1.248-.186.212-.371.238-.689.079-2.311-1.157-3.914-2.827-4.832-4.37-.186-.318.186-.291.503-.927.106-.212.053-.398-.026-.557-.079-.16-.715-1.722-.979-2.358-.26-.615-.521-.531-.715-.541-.186-.011-.398-.011-.61-.011-.212 0-.557.079-.848.398-.291.318-1.113 1.087-1.113 2.65 0 1.564 1.14 3.075 1.299 3.287.16.212 2.242 3.42 5.432 4.797 2.056.887 2.868.969 3.927.81 1.229-.185 2.821-1.152 3.218-2.265.398-1.113.398-2.067.278-2.265-.119-.204-.435-.323-.753-.483z" />
                     </svg>
                     WhatsApp
                 </a>
@@ -894,26 +1192,32 @@
                     <svg viewBox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <radialGradient id="ig-grad" r="1.5" cx="0.2" cy="0.8">
-                                <stop offset="0" stop-color="#f09433"/>
-                                <stop offset="0.3" stop-color="#e6683c"/>
-                                <stop offset="0.6" stop-color="#dc2743"/>
-                                <stop offset="0.8" stop-color="#cc2366"/>
-                                <stop offset="1" stop-color="#bc1888"/>
+                                <stop offset="0" stop-color="#f09433" />
+                                <stop offset="0.3" stop-color="#e6683c" />
+                                <stop offset="0.6" stop-color="#dc2743" />
+                                <stop offset="0.8" stop-color="#cc2366" />
+                                <stop offset="1" stop-color="#bc1888" />
                             </radialGradient>
                         </defs>
-                        <path fill="url(#ig-grad)" d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.203 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        <path fill="url(#ig-grad)"
+                            d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.203 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                     </svg>
                     Instagram
                 </a>
                 <a href="https://www.tiktok.com/@ambulanciers.toulouse" target="_blank" class="share-btn tiktok-btn">
-                    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.65-2.22 2.14-5.22 3.23-8.27 2.73-2.9-.48-5.46-2.2-6.95-4.73-1.44-2.45-1.74-5.5-.83-8.15.93-2.73 3.02-4.99 5.67-6.05 1.51-.61 3.16-.8 4.75-.6v4.18c-1.39-.14-2.82.02-4.08.68-1.2.62-2.19 1.63-2.71 2.87-.51 1.22-.55 2.61-.17 3.86.37 1.22 1.17 2.27 2.22 2.95 1.05.67 2.31.95 3.54.8 1.25-.15 2.42-.72 3.3-1.58.88-.86 1.44-2.02 1.62-3.26.08-.6.1-1.21.1-1.81V0h-3.92z"/>
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.65-2.22 2.14-5.22 3.23-8.27 2.73-2.9-.48-5.46-2.2-6.95-4.73-1.44-2.45-1.74-5.5-.83-8.15.93-2.73 3.02-4.99 5.67-6.05 1.51-.61 3.16-.8 4.75-.6v4.18c-1.39-.14-2.82.02-4.08.68-1.2.62-2.19 1.63-2.71 2.87-.51 1.22-.55 2.61-.17 3.86.37 1.22 1.17 2.27 2.22 2.95 1.05.67 2.31.95 3.54.8 1.25-.15 2.42-.72 3.3-1.58.88-.86 1.44-2.02 1.62-3.26.08-.6.1-1.21.1-1.81V0h-3.92z" />
                     </svg>
                     TikTok
                 </a>
-                <a href="https://twitter.com/intent/tweet?text=Soutenez%20les%20ambulanciers%20du%20CHU%20de%20Toulouse%20en%20gr%C3%A8ve%20!%20&url=https://dainty-youtiao-a0570b.netlify.app/" target="_blank" class="share-btn x-btn">
-                    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                <a href="https://twitter.com/intent/tweet?text=Soutenez%20les%20ambulanciers%20du%20CHU%20de%20Toulouse%20en%20gr%C3%A8ve%20!%20&url=https://dainty-youtiao-a0570b.netlify.app/"
+                    target="_blank" class="share-btn x-btn">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
                     </svg>
                     X
                 </a>
@@ -922,8 +1226,9 @@
 
         <section id="contact">
             <h2 class="section-title">Nous Contacter</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Une question ? Une proposition d'interview ou un message de soutien privé ? N'hésitez pas à nous écrire.</p>
-            
+            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Une question ? Une proposition d'interview
+                ou un message de soutien privé ? N'hésitez pas à nous écrire.</p>
+
             <div class="leave-message-container">
                 <form id="contact-form" class="support-form">
                     <div class="form-group">
@@ -933,17 +1238,20 @@
                         <input type="email" id="contact-email" name="Email" placeholder="Votre Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="contact-message" name="Message" placeholder="Écrivez votre message ici..." rows="5" required></textarea>
+                        <textarea id="contact-message" name="Message" placeholder="Écrivez votre message ici..."
+                            rows="5" required></textarea>
                     </div>
-                    
+
                     <!-- Configuration FormSubmit -->
-                    <input type="hidden" name="_subject" value="Nouveau message de contact privé - Blog Ambulanciers CHU !">
+                    <input type="hidden" name="_subject"
+                        value="Nouveau message de contact privé - Blog Ambulanciers CHU !">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
-                    
+
                     <button type="submit" class="btn-submit">Envoyer le message</button>
-                    
-                    <div id="contact-success-msg" style="display: none; text-align: center; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 1.5rem; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
+
+                    <div id="contact-success-msg"
+                        style="display: none; text-align: center; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 1.5rem; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">
                         Merci ! Votre message a bien été envoyé. Nous reviendrons vers vous dans les plus brefs délais.
                     </div>
                 </form>
@@ -963,64 +1271,115 @@
                 <h2>QUI SOMMES-NOUS ?</h2>
                 <p>Ambulancier·ères inter-hospitalier·ères du CHU de Toulouse</p>
                 <h3>INTRODUCTION</h3>
-                <p>Nous sommes ambulancier·ères inter-hospitalier·ères au CHU de Toulouse. Chaque jour, nous assurons les liaisons entre Purpan, Rangueil, Larrey, l'Oncopole, l'Hôpital des Enfants et les différents sites du CHU.</p>
-                <p>Notre mission est simple à définir, mais complexe à exercer : garantir que chaque patient, quelle que soit sa situation, arrive à destination en sécurité, dans le respect de sa dignité et de ses besoins.</p>
-                <p>Mais derrière cette mission se cachent des réalités techniques, humaines et professionnelles souvent méconnues.</p>
-                
+                <p>Nous sommes ambulancier·ères inter-hospitalier·ères au CHU de Toulouse. Chaque jour, nous assurons
+                    les liaisons entre Purpan, Rangueil, Larrey, l'Oncopole, l'Hôpital des Enfants et les différents
+                    sites du CHU.</p>
+                <p>Notre mission est simple à définir, mais complexe à exercer : garantir que chaque patient, quelle que
+                    soit sa situation, arrive à destination en sécurité, dans le respect de sa dignité et de ses
+                    besoins.</p>
+                <p>Mais derrière cette mission se cachent des réalités techniques, humaines et professionnelles souvent
+                    méconnues.</p>
+
                 <h3>NOTRE ACTIVITÉ : TROIS PILIERS ESSENTIELS</h3>
                 <h4>1. La gestion des maladies infectieuses : prévenir pour protéger</h4>
-                <p>Nous intervenons en « deuxième ligne », après nos collègues du SAMU. Lorsque nous arrivons dans les services de maladies infectieuses, le diagnostic est souvent posé. Les équipes médicales nous transmettent les précautions à appliquer : isolement contact, gouttelettes, air, bactéries multirésistantes, tuberculose, méningite…</p>
-                <p>Mais notre rôle ne se limite pas au transport. Nous sommes des acteurs de la sécurité sanitaire : nous circulons entre les blocs opératoires, les urgences, les soins intensifs, et notre responsabilité est d'éviter que l'ambulance ne devienne un vecteur de contamination.</p>
-                <p>Pour les patients les plus fragiles — immunodéprimés, greffés, en aplasie — nous devenons leur barrière protectrice. Chaque détail compte : environnement maîtrisé, matériel désinfecté, limitation des contacts, respect absolu des flux.</p>
-                
+                <p>Nous intervenons en « deuxième ligne », après nos collègues du SAMU. Lorsque nous arrivons dans les
+                    services de maladies infectieuses, le diagnostic est souvent posé. Les équipes médicales nous
+                    transmettent les précautions à appliquer : isolement contact, gouttelettes, air, bactéries
+                    multirésistantes, tuberculose, méningite…</p>
+                <p>Mais notre rôle ne se limite pas au transport. Nous sommes des acteurs de la sécurité sanitaire :
+                    nous circulons entre les blocs opératoires, les urgences, les soins intensifs, et notre
+                    responsabilité est d'éviter que l'ambulance ne devienne un vecteur de contamination.</p>
+                <p>Pour les patients les plus fragiles — immunodéprimés, greffés, en aplasie — nous devenons leur
+                    barrière protectrice. Chaque détail compte : environnement maîtrisé, matériel désinfecté, limitation
+                    des contacts, respect absolu des flux.</p>
+
                 <h4>2. Les patients à risque de fugue et de violence : des transports sous haute tension</h4>
                 <p>C'est une réalité peu visible, mais extrêmement fréquente :</p>
                 <ul>
-                    <li><strong>Détenus pénitentiaires :</strong> transportés sous escorte (administration pénitentiaire, police, gendarmerie) vers l'UHSI de Rangueil, l'UHSA psychiatrique, ou des consultations spécialisées.</li>
-                    <li><strong>Patients psychiatriques :</strong> angoissés, désorganisés, agités, opposants. Nous devons conjuguer sécurité, calme, fermeté, écoute et bienveillance.</li>
-                    <li><strong>Adolescents et personnes âgées vulnérables :</strong> adolescents en grande souffrance psychique, patients Alzheimer désorientés, anxieux ou agressifs par peur.</li>
-                    <li><strong>Victimes de violences :</strong> victimes d'agressions sexuelles ou de violences admises aux urgences. Le transport doit devenir un espace de soin, un moment où l'on redonne un peu de calme, de dignité et de contrôle.</li>
+                    <li><strong>Détenus pénitentiaires :</strong> transportés sous escorte (administration
+                        pénitentiaire, police, gendarmerie) vers l'UHSI de Rangueil, l'UHSA psychiatrique, ou des
+                        consultations spécialisées.</li>
+                    <li><strong>Patients psychiatriques :</strong> angoissés, désorganisés, agités, opposants. Nous
+                        devons conjuguer sécurité, calme, fermeté, écoute et bienveillance.</li>
+                    <li><strong>Adolescents et personnes âgées vulnérables :</strong> adolescents en grande souffrance
+                        psychique, patients Alzheimer désorientés, anxieux ou agressifs par peur.</li>
+                    <li><strong>Victimes de violences :</strong> victimes d'agressions sexuelles ou de violences admises
+                        aux urgences. Le transport doit devenir un espace de soin, un moment où l'on redonne un peu de
+                        calme, de dignité et de contrôle.</li>
                 </ul>
-                <p>Au milieu de cet environnement sécuritaire, il y a toujours une personne. Et notre rôle reste le même : assurer les soins et préserver la dignité.</p>
-                
+                <p>Au milieu de cet environnement sécuritaire, il y a toujours une personne. Et notre rôle reste le même
+                    : assurer les soins et préserver la dignité.</p>
+
                 <h4>3. Le transport de corps : une mission silencieuse, lourde de sens</h4>
-                <p>Chaque semaine. Parfois chaque jour. Ce n'est pas une mission « accessoire ». C'est une mission à part entière, encadrée par des procédures strictes, physiquement exigeante et profondément éprouvante sur le plan humain.</p>
+                <p>Chaque semaine. Parfois chaque jour. Ce n'est pas une mission « accessoire ». C'est une mission à
+                    part entière, encadrée par des procédures strictes, physiquement exigeante et profondément
+                    éprouvante sur le plan humain.</p>
                 <ul>
                     <li>Identification du corps, bracelet, habillage, mise en housse</li>
                     <li>Vérification des Obstacles Médico-Légaux (OML)</li>
                     <li>Saisie sur le logiciel M2Pi, destination précise selon le contexte</li>
-                    <li>En dehors des horaires d'ouverture (nuit, week-ends, jours fériés), nous déposons nous-mêmes le corps dans les casiers réfrigérés : seuls, sans agent de chambre mortuaire, sans cadre de santé, sans présence obligatoire d'un agent de sécurité.</li>
+                    <li>En dehors des horaires d'ouverture (nuit, week-ends, jours fériés), nous déposons nous-mêmes le
+                        corps dans les casiers réfrigérés : seuls, sans agent de chambre mortuaire, sans cadre de santé,
+                        sans présence obligatoire d'un agent de sécurité.</li>
                 </ul>
-                <p>Nous assumons alors la responsabilité complète : réception du corps, identification du casier, installation, vérification des fiches, fermeture. Une erreur à ce stade peut avoir des conséquences médico-légales graves.</p>
-                
+                <p>Nous assumons alors la responsabilité complète : réception du corps, identification du casier,
+                    installation, vérification des fiches, fermeture. Une erreur à ce stade peut avoir des conséquences
+                    médico-légales graves.</p>
+
                 <h3>NOS PROBLÉMATIQUES</h3>
                 <h4>Des risques sanitaires, sécuritaires et psychologiques majeurs</h4>
-                <p><strong>Risque infectieux :</strong> exposition répétée aux maladies transmissibles, manipulation de corps en décomposition, émanations gazeuses, liquides organiques.</p>
-                <p><strong>Risque sécuritaire :</strong> escorte de détenus, gestion de patients agités, confrontation à des situations de crise sans formation adéquate en gestion des conflits.</p>
-                <p><strong>Risque psychologique :</strong> exposition répétée au deuil des autres. Nous travaillons avec la mort régulièrement. Parfois plusieurs fois dans une même journée. Un patient que nous avions transporté vivant quelques jours plus tôt. Un enfant décédé à l'Hôpital des Enfants. Certains collègues développent des mécanismes de défense ; d'autres rentrent chez eux avec des images qu'ils ne parviennent plus à effacer.</p>
-                <p><strong>Risque musculo-squelettique :</strong> un corps adulte pèse entre 70 et 100 kg, parfois plus. Des chambres exiguës, des couloirs étroits, des ascenseurs, des casiers réfrigérés à différentes hauteurs. Les lombalgies, hernies discales et douleurs articulaires sont quotidiennes.</p>
-                
+                <p><strong>Risque infectieux :</strong> exposition répétée aux maladies transmissibles, manipulation de
+                    corps en décomposition, émanations gazeuses, liquides organiques.</p>
+                <p><strong>Risque sécuritaire :</strong> escorte de détenus, gestion de patients agités, confrontation à
+                    des situations de crise sans formation adéquate en gestion des conflits.</p>
+                <p><strong>Risque psychologique :</strong> exposition répétée au deuil des autres. Nous travaillons avec
+                    la mort régulièrement. Parfois plusieurs fois dans une même journée. Un patient que nous avions
+                    transporté vivant quelques jours plus tôt. Un enfant décédé à l'Hôpital des Enfants. Certains
+                    collègues développent des mécanismes de défense ; d'autres rentrent chez eux avec des images qu'ils
+                    ne parviennent plus à effacer.</p>
+                <p><strong>Risque musculo-squelettique :</strong> un corps adulte pèse entre 70 et 100 kg, parfois plus.
+                    Des chambres exiguës, des couloirs étroits, des ascenseurs, des casiers réfrigérés à différentes
+                    hauteurs. Les lombalgies, hernies discales et douleurs articulaires sont quotidiennes.</p>
+
                 <h4>Une dégradation nouvelle : la pénurie de médecins au SAMU</h4>
-                <p>Suite à la pénurie de médecins au SAMU et à la réduction de leurs équipes, nous assurons de plus en plus de transports complexes médicalisés — sans renfort médecin et infirmier dans le véhicule, et sans les formations nécessaires pour faire face à ces situations.</p>
-                <p>Nous sommes attendus au même niveau d'exigence, avec moins de moyens humains et moins de préparation. Cette dérive représente un risque pour les patients et une charge supplémentaire pour des équipes déjà sous tension.</p>
-                
+                <p>Suite à la pénurie de médecins au SAMU et à la réduction de leurs équipes, nous assurons de plus en
+                    plus de transports complexes médicalisés — sans renfort médecin et infirmier dans le véhicule, et
+                    sans les formations nécessaires pour faire face à ces situations.</p>
+                <p>Nous sommes attendus au même niveau d'exigence, avec moins de moyens humains et moins de préparation.
+                    Cette dérive représente un risque pour les patients et une charge supplémentaire pour des équipes
+                    déjà sous tension.</p>
+
                 <h3>NOS REVENDICATIONS</h3>
                 <h4>Non à l'injustice ! Oui à la reconnaissance !</h4>
                 <p>Face à ces réalités, nous exigeons :</p>
                 <ul>
-                    <li>La NBI (Nouvelle Bonification Indiciaire) et l'IFR (Indemnité Forfaitaire de Risque, 118 €) pour tous·tes les ambulancier·ères du CHU de Toulouse, conformément à la décision du Conseil d'État n°467063 du 19 juillet 2023 qui précise que « la NBI est liée aux fonctions réellement exercées, non au corps ou au grade ».</li>
-                    <li>Une fiche de poste réactualisée et conforme à nos missions réelles (<a href="media/Ambulancier_A0055.pdf" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">voir la fiche de poste actuelle de 2020</a> qui est caduque).</li>
-                    <li>Un cadre réglementaire clair pour les transports de corps (l'arrêté du 16/07/2009 et le décret n°91-45 sont obsolètes et ne correspondent pas à la réalité de 1660 transports de corps par an).</li>
-                    <li>Des protocoles clairs, un soutien managérial, une formation continue adaptée, et un accompagnement psychologique systématique après les situations les plus éprouvantes.</li>
+                    <li>La NBI (Nouvelle Bonification Indiciaire) et l'IFR (Indemnité Forfaitaire de Risque, 118 €) pour
+                        tous·tes les ambulancier·ères du CHU de Toulouse, conformément à la décision du Conseil d'État
+                        n°467063 du 19 juillet 2023 qui précise que « la NBI est liée aux fonctions réellement exercées,
+                        non au corps ou au grade ».</li>
+                    <li>Une fiche de poste réactualisée et conforme à nos missions réelles (<a
+                            href="media/Ambulancier_A0055.pdf" target="_blank"
+                            style="color: var(--primary); font-weight: bold; text-decoration: underline;">voir la fiche
+                            de poste actuelle de 2020</a> qui est caduque).</li>
+                    <li>Un cadre réglementaire clair pour les transports de corps (l'arrêté du 16/07/2009 et le décret
+                        n°91-45 sont obsolètes et ne correspondent pas à la réalité de 1660 transports de corps par an).
+                    </li>
+                    <li>Des protocoles clairs, un soutien managérial, une formation continue adaptée, et un
+                        accompagnement psychologique systématique après les situations les plus éprouvantes.</li>
                     <li>Des effectifs suffisants et des équipements adaptés pour la manutention sécurisée.</li>
                 </ul>
                 <p>D'autres CHU l'ont obtenu — Angers, Tours… Pourquoi pas Toulouse ?</p>
-                
+
                 <h3>CONCLUSION</h3>
-                <p>Nous ne sommes pas seulement des conducteurs. Nous sommes des soignants, des acteurs de sécurité, des professionnels exposés à des situations sanitaires, psychologiques et humaines extrêmement exigeantes.</p>
-                <p>Nous transportons des patients infectieux, immunodéprimés, détenus, psychiatriques, victimes de violences… et parfois des personnes décédées.</p>
-                <p>Chaque mission exige de nous : de la technicité, du sang-froid, de l'adaptation, et profondément, de l'humanité.</p>
-                <p>Il est temps que toutes les dimensions de notre métier — y compris les plus silencieuses — soient enfin pleinement reconnues.</p>
+                <p>Nous ne sommes pas seulement des conducteurs. Nous sommes des soignants, des acteurs de sécurité, des
+                    professionnels exposés à des situations sanitaires, psychologiques et humaines extrêmement
+                    exigeantes.</p>
+                <p>Nous transportons des patients infectieux, immunodéprimés, détenus, psychiatriques, victimes de
+                    violences… et parfois des personnes décédées.</p>
+                <p>Chaque mission exige de nous : de la technicité, du sang-froid, de l'adaptation, et profondément, de
+                    l'humanité.</p>
+                <p>Il est temps que toutes les dimensions de notre métier — y compris les plus silencieuses — soient
+                    enfin pleinement reconnues.</p>
             </div>
         </div>
     </div>
@@ -1034,6 +1393,17 @@
         </div>
     </footer>
     <script>
+        // Calcul automatique du jour de grève
+        const startDate = new Date('2026-05-11T00:00:00');
+        const today = new Date();
+        const diffTime = today - startDate;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+        const strikeDayEl = document.getElementById("strike-day");
+        if (strikeDayEl) {
+            strikeDayEl.innerText = "JOUR " + diffDays;
+        }
+
+        // Compteur de visites avec incrémentation automatique
         let visits = localStorage.getItem("visits_count");
         if (!visits) {
             visits = 275000;
@@ -1041,13 +1411,24 @@
             visits = parseInt(visits) + 1;
         }
         localStorage.setItem("visits_count", visits);
-        document.getElementById("visit-counter").innerText = visits.toLocaleString('fr-FR');
+
+        const counterEl = document.getElementById("visit-counter");
+        if (counterEl) {
+            counterEl.innerText = visits.toLocaleString('fr-FR');
+
+            // Simulation de visites en direct de manière automatique
+            setInterval(() => {
+                visits = parseInt(visits) + Math.floor(Math.random() * 3) + 1;
+                localStorage.setItem("visits_count", visits);
+                counterEl.innerText = visits.toLocaleString('fr-FR');
+            }, 4000 + Math.random() * 4000); // toutes les 4 à 8 secondes
+        }
     </script>
 
     <script>
         // Smooth scrolling
         document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -1069,15 +1450,15 @@
         // Image Modal
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("img01");
-        
+
         document.querySelectorAll('.gallery-item img').forEach(img => {
-            img.onclick = function() {
+            img.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
             }
         });
 
-        document.querySelector(".close").onclick = function() {
+        document.querySelector(".close").onclick = function () {
             modal.style.display = "none";
         }
 
@@ -1087,20 +1468,20 @@
         const spanCloseAbout = document.querySelector(".close-about");
 
         if (btnAbout) {
-            btnAbout.onclick = function() {
+            btnAbout.onclick = function () {
                 aboutModal.style.display = "block";
                 document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
             }
         }
 
         if (spanCloseAbout) {
-            spanCloseAbout.onclick = function() {
+            spanCloseAbout.onclick = function () {
                 aboutModal.style.display = "none";
                 document.body.style.overflow = "auto";
             }
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
@@ -1115,72 +1496,27 @@
             const form = document.getElementById('support-form');
             const successMsg = document.getElementById('form-success-msg');
             const formInfo = document.getElementById('form-info');
-            
+
             // Chaîne aléatoire sécurisée fournie par FormSubmit
             const formSubmitId = "83cd6db4216ccf2134d8df55102ef194";
-            
-            form.addEventListener('submit', function(e) {
+
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 const btn = form.querySelector('.btn-submit');
                 const originalText = btn.textContent;
                 btn.textContent = "Envoi en cours...";
                 btn.disabled = true;
 
                 const formData = new FormData(form);
-                
+
                 fetch(`https://formsubmit.co/ajax/${formSubmitId}`, {
                     method: "POST",
-                    headers: { 
+                    headers: {
                         'Accept': 'application/json'
                     },
                     body: formData
                 })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Erreur serveur FormSubmit (" + response.status + ")");
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.success === "false" || data.success === false) {
-                        throw new Error(data.message || "Erreur renvoyée par FormSubmit");
-                    }
-                    form.querySelectorAll('.form-group, .btn-submit, h3, #form-info, input').forEach(el => {
-                        if(el.style) el.style.display = 'none';
-                    });
-                    successMsg.style.display = 'block';
-                })
-                .catch(error => {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    alert("Une erreur s'est produite lors de l'envoi (Service momentanément indisponible). Veuillez réessayer plus tard.");
-                    console.error("FormSubmit Error:", error);
-                });
-            });
-
-            // Contact Form Logic
-            const contactForm = document.getElementById('contact-form');
-            const contactSuccessMsg = document.getElementById('contact-success-msg');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const btn = contactForm.querySelector('.btn-submit');
-                    const originalText = btn.textContent;
-                    btn.textContent = "Envoi en cours...";
-                    btn.disabled = true;
-
-                    const formData = new FormData(contactForm);
-                    
-                    fetch(`https://formsubmit.co/ajax/${formSubmitId}`, {
-                        method: "POST",
-                        headers: { 
-                            'Accept': 'application/json'
-                        },
-                        body: formData
-                    })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error("Erreur serveur FormSubmit (" + response.status + ")");
@@ -1191,10 +1527,10 @@
                         if (data.success === "false" || data.success === false) {
                             throw new Error(data.message || "Erreur renvoyée par FormSubmit");
                         }
-                        contactForm.querySelectorAll('.form-group, .btn-submit, p, h2').forEach(el => {
-                            if(el.style && !el.classList.contains('section-title')) el.style.display = 'none';
+                        form.querySelectorAll('.form-group, .btn-submit, h3, #form-info, input').forEach(el => {
+                            if (el.style) el.style.display = 'none';
                         });
-                        contactSuccessMsg.style.display = 'block';
+                        successMsg.style.display = 'block';
                     })
                     .catch(error => {
                         btn.textContent = originalText;
@@ -1202,6 +1538,51 @@
                         alert("Une erreur s'est produite lors de l'envoi (Service momentanément indisponible). Veuillez réessayer plus tard.");
                         console.error("FormSubmit Error:", error);
                     });
+            });
+
+            // Contact Form Logic
+            const contactForm = document.getElementById('contact-form');
+            const contactSuccessMsg = document.getElementById('contact-success-msg');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const btn = contactForm.querySelector('.btn-submit');
+                    const originalText = btn.textContent;
+                    btn.textContent = "Envoi en cours...";
+                    btn.disabled = true;
+
+                    const formData = new FormData(contactForm);
+
+                    fetch(`https://formsubmit.co/ajax/${formSubmitId}`, {
+                        method: "POST",
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        body: formData
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error("Erreur serveur FormSubmit (" + response.status + ")");
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.success === "false" || data.success === false) {
+                                throw new Error(data.message || "Erreur renvoyée par FormSubmit");
+                            }
+                            contactForm.querySelectorAll('.form-group, .btn-submit, p, h2').forEach(el => {
+                                if (el.style && !el.classList.contains('section-title')) el.style.display = 'none';
+                            });
+                            contactSuccessMsg.style.display = 'block';
+                        })
+                        .catch(error => {
+                            btn.textContent = originalText;
+                            btn.disabled = false;
+                            alert("Une erreur s'est produite lors de l'envoi (Service momentanément indisponible). Veuillez réessayer plus tard.");
+                            console.error("FormSubmit Error:", error);
+                        });
                 });
             }
         });
@@ -1214,14 +1595,15 @@
 
             if (dots.style.display === "none") {
                 dots.style.display = "inline";
-                btnText.innerHTML = "Voir plus"; 
+                btnText.innerHTML = "Voir plus";
                 moreText.style.display = "none";
             } else {
                 dots.style.display = "none";
-                btnText.innerHTML = "Voir moins"; 
+                btnText.innerHTML = "Voir moins";
                 moreText.style.display = "inline";
             }
         }
     </script>
 </body>
+
 </html>
