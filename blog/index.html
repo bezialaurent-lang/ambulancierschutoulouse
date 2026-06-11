@@ -608,6 +608,21 @@
                 </div>
                 <p class="carousel-legend">Actions et rassemblements du 01 Juin.</p>
             </div>
+        <!-- Jour 23 -->
+        <div style="margin-bottom: 5rem;">
+            <span class="day-label">Jour 23 - 10 Juin 2026</span>
+            <div class="carousel-container">
+                <div class="carousel-track" id="track-j23">
+                    <!-- Placeholder slide, replace with actual images in PHOTOS mobilisation/10 juin 2026 -->
+                    <div class="carousel-slide"><img src="photos/mobilisation/10 juin 2026/placeholder.jpg" alt="Jour 23"></div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="moveCarousel('track-j23', -1)">&#10094;</button>
+                    <button class="carousel-btn" onclick="moveCarousel('track-j23', 1)">&#10095;</button>
+                </div>
+            </div>
+            <p class="carousel-legend">Actions et rassemblements du 10 Juin.</p>
+        </div>
 
             <!-- Jour 18 -->
             <div style="margin-bottom: 5rem;">
@@ -1473,7 +1488,7 @@
         <p>&copy; 2026 - Mouvement pour la reconnaissance des ambulanciers du CHU de Toulouse</p>
         <p style="margin-top: 1rem; font-size: 0.8rem;">"On transporte des êtres vivants, pas des colis"</p>
         <div style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5);">
-            Visites du site : <span id="visit-counter">275 000</span>
+            Visites du site : <span id="visit-counter">324 721</span>
         </div>
     </footer>
     <script>
@@ -1490,7 +1505,7 @@
         // Compteur de visites avec incrémentation automatique
         let visits = localStorage.getItem("visits_count");
         if (!visits) {
-            visits = 275000;
+            visits = 324721;
         } else {
             visits = parseInt(visits) + 1;
         }
