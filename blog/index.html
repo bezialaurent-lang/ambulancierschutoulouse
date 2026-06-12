@@ -53,7 +53,7 @@
         <h1>AMBULANCIERS DU CHU TOULOUSE EN LUTTE</h1>
         <p class="strike-date">Mouvement débuté le 11 Mai 2026</p>
         <div class="live-badge" style="margin-bottom: 1rem;">
-            <span class="dot"></span> MOUVEMENT EN COURS - <span id="strike-day">JOUR 22</span>
+            <span class="dot"></span> MOUVEMENT EN COURS - <span id="strike-day">JOUR 23</span>
         </div>
 
         <div
@@ -194,6 +194,14 @@
         <section id="press">
             <h2 class="section-title">Revue de Presse</h2>
             <div class="press-grid">
+                <div class="press-card">
+                    <div class="press-content">
+                        <span class="press-source">La Dépêche du Midi</span>
+                        <p class="press-title">Blocage de l'Hôtel Dieu St Jacques à Toulouse du 10 Juin 2026</p>
+                        <p class="press-excerpt">Article sur la mobilisation des ambulanciers du CHU de Toulouse et le blocage de l'Hôtel Dieu.</p>
+                        <a href="media/depeche 10-06-26.pdf" target="_blank" class="btn-read">Lire l'article</a>
+                    </div>
+                </div>
                 <div class="press-card">
                     <div class="press-content">
                         <span class="press-source">La Dépêche</span>
@@ -613,15 +621,19 @@
             <span class="day-label">Jour 23 - 10 Juin 2026</span>
             <div class="carousel-container">
                 <div class="carousel-track" id="track-j23">
-                    <!-- Placeholder slide, replace with actual images in PHOTOS mobilisation/10 juin 2026 -->
-                    <div class="carousel-slide"><img src="photos/mobilisation/10 juin 2026/placeholder.jpg" alt="Jour 23"></div>
+                    <div class="carousel-slide"><img src="photos/day23/WhatsApp Image 2026-06-11 at 16.12.00 (1).jpeg" alt="Jour 23"></div>
+                    <div class="carousel-slide"><img src="photos/day23/WhatsApp Image 2026-06-11 at 16.12.00.jpeg" alt="Jour 23"></div>
+                    <div class="carousel-slide"><video src="photos/day23/WhatsApp Video 2026-06-11 at 16.11.20.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                    <div class="carousel-slide"><video src="photos/day23/WhatsApp Video 2026-06-11 at 16.12.00.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                    <div class="carousel-slide"><video src="photos/day23/WhatsApp Video 2026-06-11 at 16.12.01 (1).mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
+                    <div class="carousel-slide"><video src="photos/day23/WhatsApp Video 2026-06-11 at 16.12.01.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 8px;"></video></div>
                 </div>
                 <div class="carousel-controls">
                     <button class="carousel-btn" onclick="moveCarousel('track-j23', -1)">&#10094;</button>
                     <button class="carousel-btn" onclick="moveCarousel('track-j23', 1)">&#10095;</button>
                 </div>
             </div>
-            <p class="carousel-legend">Actions et rassemblements du 10 Juin.</p>
+            <p class="carousel-legend">Blocage de l'Hôtel Dieu St Jacques à Toulouse du 10 Juin.</p>
         </div>
 
             <!-- Jour 18 -->
@@ -673,17 +685,17 @@
                 <span class="day-label">Jour 16 - 26 Mai 2026</span>
                 <div class="carousel-container">
                     <div class="carousel-track" id="track-j16">
-                        <div class="carousel-slide"><img src="photos/day16/45EE.jpg" alt="Jour 16"></div>
+                        <div class="carousel-slide"><img src="photos/day16/45.png" alt="Jour 16"></div>
                         <div class="carousel-slide"><img src="photos/day16/46.png" alt="Jour 16"></div>
                         <div class="carousel-slide"><img src="photos/day16/47.png" alt="Jour 16"></div>
                         <div class="carousel-slide"><img
                                 src="photos/day16/706199594_1009145111506392_8715640863332891913_n.jpg" alt="Jour 16">
                         </div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.18.52ZZ.jpg"
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.18.52.jpeg"
                                 alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.32.08AA.jpg"
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.32.08.jpeg"
                                 alt="Jour 16"></div>
-                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.51.22SS.jpg"
+                        <div class="carousel-slide"><img src="photos/day16/WhatsApp Image 2026-05-26 at 08.51.22.jpeg"
                                 alt="Jour 16"></div>
                         <div class="carousel-slide"><img
                                 src="photos/day16/WhatsApp Image 2026-05-26 at 08.58.39 (3).jpeg" alt="Jour 16"></div>
@@ -1488,7 +1500,7 @@
         <p>&copy; 2026 - Mouvement pour la reconnaissance des ambulanciers du CHU de Toulouse</p>
         <p style="margin-top: 1rem; font-size: 0.8rem;">"On transporte des êtres vivants, pas des colis"</p>
         <div style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5);">
-            Visites du site : <span id="visit-counter">324 721</span>
+            Visites du site : <span id="visit-counter">342 123</span>
         </div>
     </footer>
     <script>
@@ -1504,8 +1516,8 @@
 
         // Compteur de visites avec incrémentation automatique
         let visits = localStorage.getItem("visits_count");
-        if (!visits) {
-            visits = 324721;
+        if (!visits || parseInt(visits) < 342123) {
+            visits = 342123;
         } else {
             visits = parseInt(visits) + 1;
         }
