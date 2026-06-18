@@ -4,13 +4,5 @@ copy /Y "..\soutien syndical\afash.jpg" "photos\syndicats\afash.jpg"
 copy /Y "..\soutien syndical\logo-chru-tours.png" "photos\syndicats\logo-chru-tours.png"
 copy /Y "..\soutien syndical\chu-angers-300x185.png" "photos\syndicats\chu-angers-300x185.png"
 copy /Y "..\soutien syndical\CHU_de_Montpellier_(logo).svg.png" "photos\syndicats\CHU_de_Montpellier_(logo).svg.png"
-
-echo Ajout des fichiers modifies...
-git add .
-echo Creation du commit...
-git commit -m "Ajout communique mobilisation 19 juin 2026, compteur 401241, et equilibrage des logos de soutiens"
-echo Pousse vers le repertoire distant...
-git push
-echo.
-echo Termine !
+echo Copie terminee !
 pause
