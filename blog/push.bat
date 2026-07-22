@@ -10,9 +10,10 @@ copy /Y "..\soutien syndical\lettre delga.jpeg" "media\lettre delga.jpeg"
 echo Ajout des fichiers modifies...
 git add .
 echo Creation du commit...
-git commit -m "Ajout du soutien de Carole Delga (portrait et lettre de soutien)"
+git commit -m "Ajout du soutien d'Alain Gabrieli (Vice-président du Conseil Départemental 31)"
 echo Pousse vers le repertoire distant...
 git push
 echo.
 echo Termine !
 pause
+
