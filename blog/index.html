@@ -136,6 +136,333 @@
             </div>
         </section>
 
+<style>
+.natl {
+  --natl-navy: #16305C;
+  --natl-navy-deep: #0F2244;
+  --natl-red: #E63946;
+  --natl-ink: #FFFFFF;
+  --natl-soft: rgba(255, 255, 255, 0.76);
+  --natl-line: rgba(255, 255, 255, 0.18);
+
+  background: var(--natl-navy);
+  color: var(--natl-ink);
+  font-family: inherit;
+  padding: 3.5rem 0;
+  margin: 3rem 0;
+}
+
+.natl__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.natl__title {
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: var(--natl-ink);
+}
+
+.natl__rule {
+  width: 56px;
+  height: 4px;
+  background: var(--natl-red);
+  margin: 0 0 1.75rem;
+}
+
+.natl__lead {
+  font-size: 1.06rem;
+  line-height: 1.65;
+  max-width: 62ch;
+  margin: 0 0 1.1rem;
+  color: var(--natl-soft);
+}
+
+.natl__lead strong { color: var(--natl-ink); font-weight: 700; }
+
+/* --- Citation ministérielle --- */
+.natl__quote {
+  border-left: 4px solid var(--natl-red);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1.4rem 1.6rem;
+  margin: 2rem 0;
+  max-width: 66ch;
+}
+
+.natl__quote p {
+  margin: 0 0 0.9rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--natl-ink);
+}
+
+.natl__quote cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--natl-soft);
+}
+
+/* --- Séquence 2021 --- */
+.natl__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin: 2.25rem 0;
+  border-top: 1px solid var(--natl-line);
+  padding-top: 1.75rem;
+}
+
+.natl__step-date {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--natl-red);
+  margin-bottom: 0.5rem;
+}
+
+.natl__step-body {
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: var(--natl-soft);
+  margin: 0;
+}
+
+.natl__step-body strong { color: var(--natl-ink); font-weight: 700; }
+
+/* --- Chiffres --- */
+.natl__figures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin: 2.25rem 0;
+  border-top: 1px solid var(--natl-line);
+  padding-top: 1.75rem;
+}
+
+.natl__fig-num {
+  display: block;
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.45rem;
+}
+
+.natl__fig-txt {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--natl-soft);
+  margin: 0;
+}
+
+/* --- Revendications --- */
+.natl__asks {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  max-width: 64ch;
+}
+
+.natl__asks li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.9rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--natl-soft);
+}
+
+.natl__asks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 10px;
+  height: 3px;
+  background: var(--natl-red);
+}
+
+.natl__asks strong { color: var(--natl-ink); font-weight: 700; }
+
+.natl__kicker {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.45;
+  max-width: 56ch;
+  margin: 0 0 1.5rem;
+  color: var(--natl-ink);
+}
+
+.natl__sources {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid var(--natl-line);
+  padding-top: 1.25rem;
+  margin: 0;
+  max-width: 78ch;
+}
+
+.natl a {
+  color: #FFB3B8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.natl a:focus-visible {
+  outline: 2px solid var(--natl-red);
+  outline-offset: 3px;
+}
+
+@media (max-width: 780px) {
+  .natl { padding: 2.5rem 0; }
+  .natl__inner { padding: 0 1.4rem; }
+  .natl__steps,
+  .natl__figures { grid-template-columns: 1fr; gap: 1.4rem; }
+}
+</style>
+
+<section class="natl" aria-labelledby="natl-titre">
+  <div class="natl__inner">
+
+    <h2 class="natl__title" id="natl-titre">Un combat qui dépasse Toulouse</h2>
+    <div class="natl__rule"></div>
+
+    <p class="natl__lead">
+      Notre grève est partie d'un service et d'un établissement. Elle rejoint une revendication
+      portée par les ambulanciers de toute la fonction publique hospitalière :
+      <strong>la sortie de la catégorie C</strong>. Les quelque 2 500 ambulanciers hospitaliers
+      de France exercent le même métier que nous, avec le même diplôme — et se heurtent au même
+      plafond.
+    </p>
+
+    <p class="natl__lead">
+      Ce plafond n'est ni budgétaire, ni local, ni le fait de notre direction. Il est écrit
+      noir sur blanc dans une réponse du ministère de la Santé.
+    </p>
+
+    <blockquote class="natl__quote">
+      <p>
+        « Le diplôme d'État d'ambulancier, qui a fait l'objet d'une récente réingénierie, reste
+        d'un niveau infra-baccalauréat, ce qui ne permet pas un reclassement statutaire en
+        catégorie B au sein de la fonction publique hospitalière, cette catégorie correspondant
+        à un niveau de qualification au moins égal au baccalauréat. »
+      </p>
+      <cite>Ministère de la Santé, réponse à une question écrite — Journal officiel du Sénat, juin 2023.</cite>
+    </blockquote>
+
+    <p class="natl__lead">
+      La même chaîne causale a été assumée devant l'Assemblée nationale : la refonte du diplôme
+      de 2022 n'a pas modifié son niveau, « de ce fait, ces agents restent en catégorie C ».
+      Le verrou n'est donc pas statutaire, il est <strong>certificatif</strong> : tant que le
+      diplôme d'État reste au niveau 3 — le niveau du CAP —, la catégorie B nous est fermée
+      en droit, à Toulouse comme partout ailleurs.
+    </p>
+
+    <p class="natl__lead">
+      Mais ce verrou, l'État a déjà montré comment on l'ouvre. Deux fois, la même année.
+    </p>
+
+    <div class="natl__steps">
+      <div>
+        <span class="natl__step-date">10 juin 2021</span>
+        <p class="natl__step-body">
+          Un arrêté relève les diplômes d'<strong>aide-soignant</strong> et
+          d'<strong>auxiliaire de puériculture</strong> du niveau 3 au niveau 4, celui du
+          baccalauréat, en allongeant la formation.
+        </p>
+      </div>
+      <div>
+        <span class="natl__step-date">29 septembre 2021</span>
+        <p class="natl__step-body">
+          Un décret crée les corps de <strong>catégorie B</strong> correspondants, en vigueur
+          au 1<sup>er</sup> octobre. Le statut suit le diplôme.
+        </p>
+      </div>
+      <div>
+        <span class="natl__step-date">Trois mois et demi</span>
+        <p class="natl__step-body">
+          C'est tout le délai qui a séparé les deux textes. À la clé pour nos collègues :
+          <strong>+ 228 € nets</strong> par mois en début de carrière, jusqu'à
+          <strong>+ 651 €</strong> en fin.
+        </p>
+      </div>
+    </div>
+
+    <p class="natl__lead">
+      Les ambulanciers partaient exactement du même point : diplôme de niveau 3, corps de
+      catégorie C. Le décret du 26 décembre 2022 nous a fait entrer dans la filière soignante
+      et a supprimé le mot « conducteur ». Il n'a touché ni au niveau du diplôme, ni à la
+      catégorie. Nous sommes restés à quai.
+    </p>
+
+    <div class="natl__figures">
+      <div>
+        <span class="natl__fig-num">10 sur 11</span>
+        <p class="natl__fig-txt">
+          échelons du premier grade de la catégorie C situés sous le SMIC. L'écart est comblé
+          par une indemnité différentielle de quelques dizaines d'euros, qui ne compte pas
+          pour la retraite.
+        </p>
+      </div>
+      <div>
+        <span class="natl__fig-num">≈ 2 500</span>
+        <p class="natl__fig-txt">
+          ambulanciers dans la fonction publique hospitalière, sur une profession qui compte
+          entre 50 000 et 65 000 personnes en France, tous secteurs confondus.
+        </p>
+      </div>
+      <div>
+        <span class="natl__fig-num">8 à 32 M€</span>
+        <p class="natl__fig-txt">
+          par an : le coût de la réforme complète, diplôme et reclassement réunis. Les hôpitaux
+          publics dépensent chaque année 472 millions d'euros en intérim paramédical.
+        </p>
+      </div>
+    </div>
+
+    <p class="natl__lead">
+      C'est pourquoi notre mouvement ne se limite pas à nos revendications locales. Avec les
+      ambulanciers hospitaliers de toute la France, nous demandons :
+    </p>
+
+    <ul class="natl__asks">
+      <li>
+        <strong>La réforme du référentiel du diplôme d'État d'ambulancier au niveau 4</strong> —
+        le préalable juridique que le ministère lui-même a désigné, et qui rapprocherait enfin
+        la formation de ce que le métier exige déjà : SMUR, transport de détenus, psychiatrie,
+        pédiatrie, médecine nucléaire, transport de corps.
+      </li>
+      <li>
+        <strong>Le passage en catégorie B qui doit en découler</strong>, sur le modèle exact
+        appliqué en 2021 aux aides-soignants et aux auxiliaires de puériculture.
+      </li>
+    </ul>
+
+    <p class="natl__kicker">
+      Le diplôme d'abord, le statut ensuite. L'administration l'a déjà fait, deux fois.
+      Il ne manque que la décision.
+    </p>
+
+    <p class="natl__sources">
+      Sources : réponses du ministère de la Santé au Sénat et à l'Assemblée nationale (2023) ·
+      arrêté du 10 juin 2021 relatif aux diplômes d'aide-soignant et d'auxiliaire de
+      puériculture · décret n° 2021-1257 du 29 septembre 2021 relatif à la catégorie B de la
+      fonction publique hospitalière · décret du 26 décembre 2022 créant le corps des
+      ambulanciers.
+    </p>
+
+  </div>
+</section>
+
         <section id="cagnotte" class="cagnotte-banner">
             <div class="cagnotte-content">
                 <h2>Soutenez la Caisse de Grève</h2>
